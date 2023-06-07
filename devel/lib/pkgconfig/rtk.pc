@@ -1,0 +1,8 @@
+prefix=/home/skbt/BIT-UAV/devel
+
+Name: rtk
+Description: Description of rtk
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

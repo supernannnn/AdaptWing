@@ -1,0 +1,2 @@
+location/rtk
+-DCATKIN_DEVEL_PREFIX=/home/skbt/BIT-UAV/devel -DCMAKE_INSTALL_PREFIX=/home/skbt/BIT-UAV/install -G Unix Makefiles
