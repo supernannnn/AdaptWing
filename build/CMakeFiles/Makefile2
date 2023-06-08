@@ -55,12 +55,14 @@ CMAKE_BINARY_DIR = /home/skbt/AdaptWing/build
 # The main recursive "all" target.
 all: gtest/all
 all: location/rtk/all
+all: control/px4ctrl/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
 preinstall: location/rtk/preinstall
+preinstall: control/px4ctrl/preinstall
 
 .PHONY : preinstall
 
@@ -72,8 +74,32 @@ clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: location/rtk/clean
+clean: control/px4ctrl/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory control/px4ctrl
+
+# Recursive "all" directory target.
+control/px4ctrl/all: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/all
+
+.PHONY : control/px4ctrl/all
+
+# Recursive "preinstall" directory target.
+control/px4ctrl/preinstall:
+
+.PHONY : control/px4ctrl/preinstall
+
+# Recursive "clean" directory target.
+control/px4ctrl/clean: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/clean
+control/px4ctrl/clean: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/clean
+control/px4ctrl/clean: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/clean
+control/px4ctrl/clean: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/clean
+control/px4ctrl/clean: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/clean
+control/px4ctrl/clean: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : control/px4ctrl/clean
 
 #=============================================================================
 # Directory level rules for directory gtest
@@ -359,8 +385,8 @@ CMakeFiles/download_extra_data.dir/clean:
 # Target rules for target gtest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmock.dir/all
+gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"
@@ -2380,6 +2406,168 @@ actionlib_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/actionlib_msgs_
 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean:
 	$(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
 .PHONY : location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target control/px4ctrl/CMakeFiles/px4ctrl_node.dir
+
+# All Build rule for target.
+control/px4ctrl/CMakeFiles/px4ctrl_node.dir/all:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/depend
+	$(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=11,12,13,14,15,16 "Built target px4ctrl_node"
+.PHONY : control/px4ctrl/CMakeFiles/px4ctrl_node.dir/all
+
+# Build rule for subdir invocation for target.
+control/px4ctrl/CMakeFiles/px4ctrl_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/px4ctrl_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : control/px4ctrl/CMakeFiles/px4ctrl_node.dir/rule
+
+# Convenience name for target.
+px4ctrl_node: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/rule
+
+.PHONY : px4ctrl_node
+
+# clean rule for target.
+control/px4ctrl/CMakeFiles/px4ctrl_node.dir/clean:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/clean
+.PHONY : control/px4ctrl/CMakeFiles/px4ctrl_node.dir/clean
+
+#=============================================================================
+# Target rules for target control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num= "Built target quadrotor_msgs_generate_messages_py"
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+quadrotor_msgs_generate_messages_py: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule
+
+.PHONY : quadrotor_msgs_generate_messages_py
+
+# clean rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/clean
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num= "Built target quadrotor_msgs_generate_messages_nodejs"
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+quadrotor_msgs_generate_messages_nodejs: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : quadrotor_msgs_generate_messages_nodejs
+
+# clean rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/clean
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num= "Built target quadrotor_msgs_generate_messages_lisp"
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+quadrotor_msgs_generate_messages_lisp: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : quadrotor_msgs_generate_messages_lisp
+
+# clean rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/clean
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num= "Built target quadrotor_msgs_generate_messages_eus"
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+quadrotor_msgs_generate_messages_eus: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : quadrotor_msgs_generate_messages_eus
+
+# clean rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/clean
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num= "Built target quadrotor_msgs_generate_messages_cpp"
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+quadrotor_msgs_generate_messages_cpp: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : quadrotor_msgs_generate_messages_cpp
+
+# clean rule for target.
+control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/clean
+.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

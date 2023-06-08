@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/skbt/AdaptWing/build/gtest/cmake_install.cmake")
   include("/home/skbt/AdaptWing/build/location/rtk/cmake_install.cmake")
+  include("/home/skbt/AdaptWing/build/control/px4ctrl/cmake_install.cmake")
 
 endif()
 

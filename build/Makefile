@@ -1207,6 +1207,84 @@ actionlib_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
+#=============================================================================
+# Target rules for targets named px4ctrl_node
+
+# Build rule for target.
+px4ctrl_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 px4ctrl_node
+.PHONY : px4ctrl_node
+
+# fast build rule for target.
+px4ctrl_node/fast:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build
+.PHONY : px4ctrl_node/fast
+
+#=============================================================================
+# Target rules for targets named quadrotor_msgs_generate_messages_py
+
+# Build rule for target.
+quadrotor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quadrotor_msgs_generate_messages_py
+.PHONY : quadrotor_msgs_generate_messages_py
+
+# fast build rule for target.
+quadrotor_msgs_generate_messages_py/fast:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build
+.PHONY : quadrotor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named quadrotor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+quadrotor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quadrotor_msgs_generate_messages_nodejs
+.PHONY : quadrotor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+quadrotor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build
+.PHONY : quadrotor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named quadrotor_msgs_generate_messages_lisp
+
+# Build rule for target.
+quadrotor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quadrotor_msgs_generate_messages_lisp
+.PHONY : quadrotor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+quadrotor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build
+.PHONY : quadrotor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named quadrotor_msgs_generate_messages_eus
+
+# Build rule for target.
+quadrotor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quadrotor_msgs_generate_messages_eus
+.PHONY : quadrotor_msgs_generate_messages_eus
+
+# fast build rule for target.
+quadrotor_msgs_generate_messages_eus/fast:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build
+.PHONY : quadrotor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named quadrotor_msgs_generate_messages_cpp
+
+# Build rule for target.
+quadrotor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 quadrotor_msgs_generate_messages_cpp
+.PHONY : quadrotor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+quadrotor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build
+.PHONY : quadrotor_msgs_generate_messages_cpp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1300,6 +1378,12 @@ help:
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_eus"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... px4ctrl_node"
+	@echo "... quadrotor_msgs_generate_messages_py"
+	@echo "... quadrotor_msgs_generate_messages_nodejs"
+	@echo "... quadrotor_msgs_generate_messages_lisp"
+	@echo "... quadrotor_msgs_generate_messages_eus"
+	@echo "... quadrotor_msgs_generate_messages_cpp"
 .PHONY : help
 
 

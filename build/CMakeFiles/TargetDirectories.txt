@@ -113,3 +113,16 @@
 /home/skbt/AdaptWing/build/location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir
 /home/skbt/AdaptWing/build/location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir
 /home/skbt/AdaptWing/build/location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/install/strip.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/install.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/list_install_components.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/rebuild_cache.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/edit_cache.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/test.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/px4ctrl_node.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/install/local.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir
+/home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir
