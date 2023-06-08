@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/skbt/BIT-UAV/src
+CMAKE_SOURCE_DIR = /home/skbt/AdaptWing/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/skbt/BIT-UAV/build
+CMAKE_BINARY_DIR = /home/skbt/AdaptWing/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/skbt/BIT-UAV/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/BIT-UAV/build/CMakeFiles /home/skbt/BIT-UAV/build/location/rtk/CMakeFiles/progress.marks
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/BIT-UAV/build/CMakeFiles 0
+	cd /home/skbt/AdaptWing/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles /home/skbt/AdaptWing/build/location/rtk/CMakeFiles/progress.marks
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/clean
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/preinstall
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/preinstall
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/skbt/BIT-UAV/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/skbt/AdaptWing/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ trajectory_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/trajectory_msg
 
 # fast build rule for target.
 trajectory_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
 .PHONY : trajectory_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -194,12 +194,12 @@ trajectory_msgs_generate_messages_lisp: location/rtk/CMakeFiles/trajectory_msgs_
 
 # fast build rule for target.
 trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
 .PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -209,12 +209,12 @@ trajectory_msgs_generate_messages_cpp: location/rtk/CMakeFiles/trajectory_msgs_g
 
 # fast build rule for target.
 trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
 .PHONY : trajectory_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -224,12 +224,12 @@ tf2_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/tf2_msgs_generate_mes
 
 # fast build rule for target.
 tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -239,12 +239,12 @@ tf2_msgs_generate_messages_lisp: location/rtk/CMakeFiles/tf2_msgs_generate_messa
 
 # fast build rule for target.
 tf2_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -254,12 +254,12 @@ tf2_msgs_generate_messages_cpp: location/rtk/CMakeFiles/tf2_msgs_generate_messag
 
 # fast build rule for target.
 tf2_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
 .PHONY : tf2_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -269,12 +269,12 @@ geographic_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/geographic_msg
 
 # fast build rule for target.
 geographic_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_nodejs.dir/build
 .PHONY : geographic_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -284,12 +284,12 @@ geographic_msgs_generate_messages_eus: location/rtk/CMakeFiles/geographic_msgs_g
 
 # fast build rule for target.
 geographic_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_eus.dir/build
 .PHONY : geographic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -299,12 +299,12 @@ geometry_msgs_generate_messages_eus: location/rtk/CMakeFiles/geometry_msgs_gener
 
 # fast build rule for target.
 geometry_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -314,12 +314,12 @@ std_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/std_msgs_generate_mes
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -329,12 +329,12 @@ mavros_msgs_generate_messages_eus: location/rtk/CMakeFiles/mavros_msgs_generate_
 
 # fast build rule for target.
 mavros_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_eus.dir/build
 .PHONY : mavros_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -344,12 +344,12 @@ actionlib_generate_messages_py: location/rtk/CMakeFiles/actionlib_generate_messa
 
 # fast build rule for target.
 actionlib_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_py.dir/build
 .PHONY : actionlib_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -359,12 +359,12 @@ diagnostic_msgs_generate_messages_lisp: location/rtk/CMakeFiles/diagnostic_msgs_
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
 .PHONY : diagnostic_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -374,12 +374,12 @@ nav_msgs_generate_messages_eus: location/rtk/CMakeFiles/nav_msgs_generate_messag
 
 # fast build rule for target.
 nav_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
 .PHONY : nav_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -389,12 +389,12 @@ diagnostic_msgs_generate_messages_cpp: location/rtk/CMakeFiles/diagnostic_msgs_g
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
 .PHONY : diagnostic_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -404,12 +404,12 @@ std_msgs_generate_messages_cpp: location/rtk/CMakeFiles/std_msgs_generate_messag
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -419,12 +419,12 @@ diagnostic_msgs_generate_messages_eus: location/rtk/CMakeFiles/diagnostic_msgs_g
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
 .PHONY : diagnostic_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -434,12 +434,12 @@ std_msgs_generate_messages_py: location/rtk/CMakeFiles/std_msgs_generate_message
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -449,12 +449,12 @@ geometry_msgs_generate_messages_py: location/rtk/CMakeFiles/geometry_msgs_genera
 
 # fast build rule for target.
 geometry_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
 .PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -464,12 +464,12 @@ tf2_msgs_generate_messages_eus: location/rtk/CMakeFiles/tf2_msgs_generate_messag
 
 # fast build rule for target.
 tf2_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
 .PHONY : tf2_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -479,12 +479,12 @@ sensor_msgs_generate_messages_py: location/rtk/CMakeFiles/sensor_msgs_generate_m
 
 # fast build rule for target.
 sensor_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -494,12 +494,12 @@ nav_msgs_generate_messages_py: location/rtk/CMakeFiles/nav_msgs_generate_message
 
 # fast build rule for target.
 nav_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_py.dir/build
 .PHONY : nav_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -509,12 +509,12 @@ roscpp_generate_messages_cpp: location/rtk/CMakeFiles/roscpp_generate_messages_c
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -524,12 +524,12 @@ geographic_msgs_generate_messages_cpp: location/rtk/CMakeFiles/geographic_msgs_g
 
 # fast build rule for target.
 geographic_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_cpp.dir/build
 .PHONY : geographic_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -539,12 +539,12 @@ rosgraph_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/rosgraph_msgs_ge
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -554,12 +554,12 @@ actionlib_generate_messages_cpp: location/rtk/CMakeFiles/actionlib_generate_mess
 
 # fast build rule for target.
 actionlib_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_cpp.dir/build
 .PHONY : actionlib_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -569,12 +569,12 @@ std_msgs_generate_messages_lisp: location/rtk/CMakeFiles/std_msgs_generate_messa
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -584,12 +584,12 @@ trajectory_msgs_generate_messages_eus: location/rtk/CMakeFiles/trajectory_msgs_g
 
 # fast build rule for target.
 trajectory_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
 .PHONY : trajectory_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -599,12 +599,12 @@ roscpp_generate_messages_py: location/rtk/CMakeFiles/roscpp_generate_messages_py
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -614,12 +614,12 @@ geometry_msgs_generate_messages_lisp: location/rtk/CMakeFiles/geometry_msgs_gene
 
 # fast build rule for target.
 geometry_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
 .PHONY : geometry_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -629,12 +629,12 @@ roscpp_generate_messages_eus: location/rtk/CMakeFiles/roscpp_generate_messages_e
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -644,12 +644,12 @@ uuid_msgs_generate_messages_cpp: location/rtk/CMakeFiles/uuid_msgs_generate_mess
 
 # fast build rule for target.
 uuid_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_cpp.dir/build
 .PHONY : uuid_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -659,12 +659,12 @@ uuid_msgs_generate_messages_eus: location/rtk/CMakeFiles/uuid_msgs_generate_mess
 
 # fast build rule for target.
 uuid_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_eus.dir/build
 .PHONY : uuid_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -674,12 +674,12 @@ mavros_msgs_generate_messages_py: location/rtk/CMakeFiles/mavros_msgs_generate_m
 
 # fast build rule for target.
 mavros_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_py.dir/build
 .PHONY : mavros_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/location_node.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/location_node.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/location_node.dir/rule
 .PHONY : location/rtk/CMakeFiles/location_node.dir/rule
 
 # Convenience name for target.
@@ -689,12 +689,12 @@ location_node: location/rtk/CMakeFiles/location_node.dir/rule
 
 # fast build rule for target.
 location_node/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/build
 .PHONY : location_node/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -704,12 +704,12 @@ roscpp_generate_messages_nodejs: location/rtk/CMakeFiles/roscpp_generate_message
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -719,12 +719,12 @@ diagnostic_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/diagnostic_msg
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
 .PHONY : diagnostic_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -734,12 +734,12 @@ uuid_msgs_generate_messages_lisp: location/rtk/CMakeFiles/uuid_msgs_generate_mes
 
 # fast build rule for target.
 uuid_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_lisp.dir/build
 .PHONY : uuid_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -749,12 +749,12 @@ geographic_msgs_generate_messages_lisp: location/rtk/CMakeFiles/geographic_msgs_
 
 # fast build rule for target.
 geographic_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_lisp.dir/build
 .PHONY : geographic_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -764,12 +764,12 @@ rosgraph_msgs_generate_messages_eus: location/rtk/CMakeFiles/rosgraph_msgs_gener
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -779,12 +779,12 @@ nav_msgs_generate_messages_cpp: location/rtk/CMakeFiles/nav_msgs_generate_messag
 
 # fast build rule for target.
 nav_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
 .PHONY : nav_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -794,12 +794,12 @@ rosgraph_msgs_generate_messages_lisp: location/rtk/CMakeFiles/rosgraph_msgs_gene
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -809,12 +809,12 @@ sensor_msgs_generate_messages_cpp: location/rtk/CMakeFiles/sensor_msgs_generate_
 
 # fast build rule for target.
 sensor_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -824,12 +824,12 @@ diagnostic_msgs_generate_messages_py: location/rtk/CMakeFiles/diagnostic_msgs_ge
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
 .PHONY : diagnostic_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -839,12 +839,12 @@ nav_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/nav_msgs_generate_mes
 
 # fast build rule for target.
 nav_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
 .PHONY : nav_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -854,12 +854,12 @@ actionlib_msgs_generate_messages_eus: location/rtk/CMakeFiles/actionlib_msgs_gen
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
 .PHONY : actionlib_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -869,12 +869,12 @@ geometry_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/geometry_msgs_ge
 
 # fast build rule for target.
 geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -884,12 +884,12 @@ geometry_msgs_generate_messages_cpp: location/rtk/CMakeFiles/geometry_msgs_gener
 
 # fast build rule for target.
 geometry_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
 .PHONY : geometry_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -899,12 +899,12 @@ roscpp_generate_messages_lisp: location/rtk/CMakeFiles/roscpp_generate_messages_
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -914,12 +914,12 @@ actionlib_generate_messages_lisp: location/rtk/CMakeFiles/actionlib_generate_mes
 
 # fast build rule for target.
 actionlib_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 .PHONY : actionlib_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -929,12 +929,12 @@ rosgraph_msgs_generate_messages_py: location/rtk/CMakeFiles/rosgraph_msgs_genera
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -944,12 +944,12 @@ geographic_msgs_generate_messages_py: location/rtk/CMakeFiles/geographic_msgs_ge
 
 # fast build rule for target.
 geographic_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/geographic_msgs_generate_messages_py.dir/build
 .PHONY : geographic_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -959,12 +959,12 @@ sensor_msgs_generate_messages_eus: location/rtk/CMakeFiles/sensor_msgs_generate_
 
 # fast build rule for target.
 sensor_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -974,12 +974,12 @@ sensor_msgs_generate_messages_lisp: location/rtk/CMakeFiles/sensor_msgs_generate
 
 # fast build rule for target.
 sensor_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -989,12 +989,12 @@ uuid_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/uuid_msgs_generate_m
 
 # fast build rule for target.
 uuid_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_nodejs.dir/build
 .PHONY : uuid_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1004,12 +1004,12 @@ uuid_msgs_generate_messages_py: location/rtk/CMakeFiles/uuid_msgs_generate_messa
 
 # fast build rule for target.
 uuid_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/uuid_msgs_generate_messages_py.dir/build
 .PHONY : uuid_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1019,12 +1019,12 @@ tf2_msgs_generate_messages_py: location/rtk/CMakeFiles/tf2_msgs_generate_message
 
 # fast build rule for target.
 tf2_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
 .PHONY : tf2_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1034,12 +1034,12 @@ mavros_msgs_generate_messages_cpp: location/rtk/CMakeFiles/mavros_msgs_generate_
 
 # fast build rule for target.
 mavros_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_cpp.dir/build
 .PHONY : mavros_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -1049,12 +1049,12 @@ actionlib_generate_messages_nodejs: location/rtk/CMakeFiles/actionlib_generate_m
 
 # fast build rule for target.
 actionlib_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
 .PHONY : actionlib_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1064,12 +1064,12 @@ actionlib_msgs_generate_messages_py: location/rtk/CMakeFiles/actionlib_msgs_gene
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -1079,12 +1079,12 @@ mavros_msgs_generate_messages_lisp: location/rtk/CMakeFiles/mavros_msgs_generate
 
 # fast build rule for target.
 mavros_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_lisp.dir/build
 .PHONY : mavros_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -1094,12 +1094,12 @@ mavros_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/mavros_msgs_genera
 
 # fast build rule for target.
 mavros_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/mavros_msgs_generate_messages_nodejs.dir/build
 .PHONY : mavros_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -1109,12 +1109,12 @@ sensor_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/sensor_msgs_genera
 
 # fast build rule for target.
 sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -1124,12 +1124,12 @@ nav_msgs_generate_messages_lisp: location/rtk/CMakeFiles/nav_msgs_generate_messa
 
 # fast build rule for target.
 nav_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
 .PHONY : nav_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1139,12 +1139,12 @@ actionlib_msgs_generate_messages_cpp: location/rtk/CMakeFiles/actionlib_msgs_gen
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
 .PHONY : actionlib_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 .PHONY : location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -1154,12 +1154,12 @@ trajectory_msgs_generate_messages_py: location/rtk/CMakeFiles/trajectory_msgs_ge
 
 # fast build rule for target.
 trajectory_msgs_generate_messages_py/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make location/rtk/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -1169,12 +1169,12 @@ rosgraph_msgs_generate_messages_cpp: location/rtk/CMakeFiles/rosgraph_msgs_gener
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make location/rtk/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -1184,12 +1184,12 @@ actionlib_generate_messages_eus: location/rtk/CMakeFiles/actionlib_generate_mess
 
 # fast build rule for target.
 actionlib_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/actionlib_generate_messages_eus.dir/build
 .PHONY : actionlib_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -1199,12 +1199,12 @@ actionlib_msgs_generate_messages_lisp: location/rtk/CMakeFiles/actionlib_msgs_ge
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
 .PHONY : actionlib_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -1214,12 +1214,12 @@ std_msgs_generate_messages_eus: location/rtk/CMakeFiles/std_msgs_generate_messag
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make location/rtk/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 .PHONY : location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -1229,7 +1229,7 @@ actionlib_msgs_generate_messages_nodejs: location/rtk/CMakeFiles/actionlib_msgs_
 
 # fast build rule for target.
 actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make location/rtk/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 src/location_node.o: src/location_node.cpp.o
@@ -1238,7 +1238,7 @@ src/location_node.o: src/location_node.cpp.o
 
 # target to build an object file
 src/location_node.cpp.o:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/src/location_node.cpp.o
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/src/location_node.cpp.o
 .PHONY : src/location_node.cpp.o
 
 src/location_node.i: src/location_node.cpp.i
@@ -1247,7 +1247,7 @@ src/location_node.i: src/location_node.cpp.i
 
 # target to preprocess a source file
 src/location_node.cpp.i:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/src/location_node.cpp.i
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/src/location_node.cpp.i
 .PHONY : src/location_node.cpp.i
 
 src/location_node.s: src/location_node.cpp.s
@@ -1256,7 +1256,7 @@ src/location_node.s: src/location_node.cpp.s
 
 # target to generate assembly for a file
 src/location_node.cpp.s:
-	cd /home/skbt/BIT-UAV/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/src/location_node.cpp.s
+	cd /home/skbt/AdaptWing/build && $(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/src/location_node.cpp.s
 .PHONY : src/location_node.cpp.s
 
 # Help Target
@@ -1357,6 +1357,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/skbt/BIT-UAV/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/skbt/AdaptWing/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

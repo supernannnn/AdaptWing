@@ -1,4 +1,4 @@
-prefix=/home/skbt/BIT-UAV/install
+prefix=/home/skbt/AdaptWing/install
 
 Name: rtk
 Description: Description of rtk

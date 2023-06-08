@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/skbt/BIT-UAV/devel/lib/rtk/location_node"
-  "/home/skbt/BIT-UAV/devel/lib/rtk/location_node.pdb"
+  "/home/skbt/AdaptWing/devel/lib/rtk/location_node"
+  "/home/skbt/AdaptWing/devel/lib/rtk/location_node.pdb"
   "CMakeFiles/location_node.dir/src/location_node.cpp.o"
 )
 

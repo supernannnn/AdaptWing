@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/skbt/BIT-UAV/src
-# Build directory: /home/skbt/BIT-UAV/build
+# Source directory: /home/skbt/AdaptWing/src
+# Build directory: /home/skbt/AdaptWing/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.

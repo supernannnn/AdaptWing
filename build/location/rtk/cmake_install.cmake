@@ -1,8 +1,8 @@
-# Install script for directory: /home/skbt/BIT-UAV/src/location/rtk
+# Install script for directory: /home/skbt/AdaptWing/src/location/rtk
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/skbt/BIT-UAV/install")
+  set(CMAKE_INSTALL_PREFIX "/home/skbt/AdaptWing/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/skbt/BIT-UAV/build/location/rtk/catkin_generated/installspace/rtk.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/skbt/AdaptWing/build/location/rtk/catkin_generated/installspace/rtk.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rtk/cmake" TYPE FILE FILES
-    "/home/skbt/BIT-UAV/build/location/rtk/catkin_generated/installspace/rtkConfig.cmake"
-    "/home/skbt/BIT-UAV/build/location/rtk/catkin_generated/installspace/rtkConfig-version.cmake"
+    "/home/skbt/AdaptWing/build/location/rtk/catkin_generated/installspace/rtkConfig.cmake"
+    "/home/skbt/AdaptWing/build/location/rtk/catkin_generated/installspace/rtkConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rtk" TYPE FILE FILES "/home/skbt/BIT-UAV/src/location/rtk/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rtk" TYPE FILE FILES "/home/skbt/AdaptWing/src/location/rtk/package.xml")
 endif()
 

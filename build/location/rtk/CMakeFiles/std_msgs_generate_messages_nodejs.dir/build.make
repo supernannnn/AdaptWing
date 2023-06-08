@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/skbt/BIT-UAV/src
+CMAKE_SOURCE_DIR = /home/skbt/AdaptWing/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/skbt/BIT-UAV/build
+CMAKE_BINARY_DIR = /home/skbt/AdaptWing/build
 
 # Utility rule file for std_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build: std_msgs_ge
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 
 location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/skbt/BIT-UAV/build/location/rtk && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/skbt/AdaptWing/build/location/rtk && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/skbt/BIT-UAV/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/skbt/BIT-UAV/src /home/skbt/BIT-UAV/src/location/rtk /home/skbt/BIT-UAV/build /home/skbt/BIT-UAV/build/location/rtk /home/skbt/BIT-UAV/build/location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/skbt/AdaptWing/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/skbt/AdaptWing/src /home/skbt/AdaptWing/src/location/rtk /home/skbt/AdaptWing/build /home/skbt/AdaptWing/build/location/rtk /home/skbt/AdaptWing/build/location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : location/rtk/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
 

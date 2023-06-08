@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/skbt/BIT-UAV/src/location/rtk/include/rtk/location.h
+/home/skbt/AdaptWing/src/location/rtk/include/rtk/location.h
 iostream
 -
 std_msgs/String.h
@@ -32,7 +32,7 @@ geometry_msgs/TwistStamped.h
 vector
 -
 
-/home/skbt/BIT-UAV/src/location/rtk/src/location_node.cpp
+/home/skbt/AdaptWing/src/location/rtk/src/location_node.cpp
 rtk/location.h
 -
 

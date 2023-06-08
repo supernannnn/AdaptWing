@@ -39,8 +39,6 @@ void LOCATION::init(ros::NodeHandle& nh){
 
 }
 
-
-
 void LOCATION::processDataCallback(const ros::TimerEvent &e){
 
     odom_msg_.header.stamp = ros::Time::now();
