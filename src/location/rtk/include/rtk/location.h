@@ -17,6 +17,10 @@
 
 #include <vector>
 
+#include <cmath>
+
+#include <Eigen/Geometry>
+
 
 // typdef struct RTK_DATA{
 //     double float Latitude;
@@ -25,8 +29,19 @@
 // };
 
 
+typedef struct{
+    double pitch;
+    double yaw;
+    double roll;
+}Euler;
+
+
+
 class LOCATION{
 private:
+
+
+    Euler euler;
 
     ros::Timer processData_timer_;
 
@@ -74,9 +89,16 @@ private:
     void processLinearVelCallback(const geometry_msgs::TwistStamped::ConstPtr &msg);
 
 
+    /*
+    **四元数转欧拉角
+    */
+    void Quaternion2Euler(const geometry_msgs::Quaternion &q, Euler& euler);
+
+
+
 public:
 
-    float laser_altitude;
+    float laser_altitude = 0;
 
     //构造函数可以传递参数进来
     LOCATION(/* argvs */){

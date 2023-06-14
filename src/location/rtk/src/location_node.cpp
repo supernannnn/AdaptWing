@@ -34,8 +34,8 @@ void LOCATION::init(ros::NodeHandle& nh){
     /********这里使用线程来处理而不是ros中的定时器（timer），原因是这两个功能都是与硬件完成数据交互，需要长时间运行保证稳定性*******/
     // std::thread rtk_thread(&LOCATION::read_rtk_via_uart, this);
     // rtk_thread.detach();                                            //分离线程在后台运行
-    std::thread laser_thread(&LOCATION::read_laser_via_uart, this);
-    laser_thread.detach();
+    // std::thread laser_thread(&LOCATION::read_laser_via_uart, this);
+    // laser_thread.detach();
 
 }
 
@@ -53,6 +53,7 @@ void LOCATION::processDataCallback(const ros::TimerEvent &e){
     odom_msg_.pose.pose.orientation.y = ori_msg_.y;
     odom_msg_.pose.pose.orientation.z = ori_msg_.z;
     odom_msg_.pose.pose.orientation.w = ori_msg_.w;
+
 
     
     odom_msg_.twist.twist.linear.x = linear_velocity.x;
@@ -170,6 +171,9 @@ void LOCATION::processImuCallback(const sensor_msgs::Imu::ConstPtr &msg){
     angular_velocity.x = msg->angular_velocity.x;
     angular_velocity.y = msg->angular_velocity.y;
     angular_velocity.z = msg->angular_velocity.z;
+
+
+    Quaternion2Euler(ori_msg_, euler);
 }
 
 

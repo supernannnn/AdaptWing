@@ -1,2 +1,2 @@
-control/px4ctrl:location/rtk
+control/px4ctrl:location/VINS-Fusion/camera_models:location/VINS-Fusion/global_fusion:location/VINS-Fusion/loop_fusion:location/VINS-Fusion/vins_estimator:location/rtk
 -DCATKIN_DEVEL_PREFIX=/home/skbt/AdaptWing/devel -DCMAKE_INSTALL_PREFIX=/home/skbt/AdaptWing/install -G Unix Makefiles
