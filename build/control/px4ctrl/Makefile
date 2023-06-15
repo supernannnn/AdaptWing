@@ -68,6 +68,18 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -123,18 +135,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/skbt/AdaptWing/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles /home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/progress.marks
@@ -181,81 +181,6 @@ px4ctrl_node: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/rule
 px4ctrl_node/fast:
 	cd /home/skbt/AdaptWing/build && $(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build
 .PHONY : px4ctrl_node/fast
-
-# Convenience name for target.
-control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule
-.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-quadrotor_msgs_generate_messages_py: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/rule
-
-.PHONY : quadrotor_msgs_generate_messages_py
-
-# fast build rule for target.
-quadrotor_msgs_generate_messages_py/fast:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_py.dir/build
-.PHONY : quadrotor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-quadrotor_msgs_generate_messages_nodejs: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : quadrotor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-quadrotor_msgs_generate_messages_nodejs/fast:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_nodejs.dir/build
-.PHONY : quadrotor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule
-.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-quadrotor_msgs_generate_messages_lisp: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : quadrotor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-quadrotor_msgs_generate_messages_lisp/fast:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_lisp.dir/build
-.PHONY : quadrotor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule
-.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-quadrotor_msgs_generate_messages_eus: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : quadrotor_msgs_generate_messages_eus
-
-# fast build rule for target.
-quadrotor_msgs_generate_messages_eus/fast:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_eus.dir/build
-.PHONY : quadrotor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f CMakeFiles/Makefile2 control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule
-.PHONY : control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-quadrotor_msgs_generate_messages_cpp: control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : quadrotor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-quadrotor_msgs_generate_messages_cpp/fast:
-	cd /home/skbt/AdaptWing/build && $(MAKE) -f control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build.make control/px4ctrl/CMakeFiles/quadrotor_msgs_generate_messages_cpp.dir/build
-.PHONY : quadrotor_msgs_generate_messages_cpp/fast
 
 src/PX4CtrlFSM.o: src/PX4CtrlFSM.cpp.o
 
@@ -399,18 +324,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... px4ctrl_node"
-	@echo "... quadrotor_msgs_generate_messages_py"
-	@echo "... quadrotor_msgs_generate_messages_nodejs"
-	@echo "... quadrotor_msgs_generate_messages_lisp"
-	@echo "... install/local"
-	@echo "... quadrotor_msgs_generate_messages_eus"
-	@echo "... quadrotor_msgs_generate_messages_cpp"
 	@echo "... src/PX4CtrlFSM.o"
 	@echo "... src/PX4CtrlFSM.i"
 	@echo "... src/PX4CtrlFSM.s"
