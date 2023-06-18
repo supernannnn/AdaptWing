@@ -67,8 +67,10 @@ all: planner/EGO-Planner/traj_utils/all
 all: planner/EGO-Planner/bspline_opt/all
 all: planner/EGO-Planner/plan_manage/all
 all: planner/EGO-Planner/rosmsg_tcp_bridge/all
+all: planner/MinimumSnap/trajectory_generator/all
 all: control/px4ctrl/all
 all: location/VINS-Fusion/vins_estimator/all
+all: planner/MinimumSnap/waypoint_generator/all
 
 .PHONY : all
 
@@ -87,8 +89,10 @@ preinstall: planner/EGO-Planner/traj_utils/preinstall
 preinstall: planner/EGO-Planner/bspline_opt/preinstall
 preinstall: planner/EGO-Planner/plan_manage/preinstall
 preinstall: planner/EGO-Planner/rosmsg_tcp_bridge/preinstall
+preinstall: planner/MinimumSnap/trajectory_generator/preinstall
 preinstall: control/px4ctrl/preinstall
 preinstall: location/VINS-Fusion/vins_estimator/preinstall
+preinstall: planner/MinimumSnap/waypoint_generator/preinstall
 
 .PHONY : preinstall
 
@@ -112,8 +116,10 @@ clean: planner/EGO-Planner/traj_utils/clean
 clean: planner/EGO-Planner/bspline_opt/clean
 clean: planner/EGO-Planner/plan_manage/clean
 clean: planner/EGO-Planner/rosmsg_tcp_bridge/clean
+clean: planner/MinimumSnap/trajectory_generator/clean
 clean: control/px4ctrl/clean
 clean: location/VINS-Fusion/vins_estimator/clean
+clean: planner/MinimumSnap/waypoint_generator/clean
 
 .PHONY : clean
 
@@ -538,6 +544,42 @@ planner/EGO-Planner/traj_utils/clean: planner/EGO-Planner/traj_utils/CMakeFiles/
 .PHONY : planner/EGO-Planner/traj_utils/clean
 
 #=============================================================================
+# Directory level rules for directory planner/MinimumSnap/trajectory_generator
+
+# Recursive "all" directory target.
+planner/MinimumSnap/trajectory_generator/all: planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/all
+
+.PHONY : planner/MinimumSnap/trajectory_generator/all
+
+# Recursive "preinstall" directory target.
+planner/MinimumSnap/trajectory_generator/preinstall:
+
+.PHONY : planner/MinimumSnap/trajectory_generator/preinstall
+
+# Recursive "clean" directory target.
+planner/MinimumSnap/trajectory_generator/clean: planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/clean
+
+.PHONY : planner/MinimumSnap/trajectory_generator/clean
+
+#=============================================================================
+# Directory level rules for directory planner/MinimumSnap/waypoint_generator
+
+# Recursive "all" directory target.
+planner/MinimumSnap/waypoint_generator/all: planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/all
+
+.PHONY : planner/MinimumSnap/waypoint_generator/all
+
+# Recursive "preinstall" directory target.
+planner/MinimumSnap/waypoint_generator/preinstall:
+
+.PHONY : planner/MinimumSnap/waypoint_generator/preinstall
+
+# Recursive "clean" directory target.
+planner/MinimumSnap/waypoint_generator/clean: planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/clean
+
+.PHONY : planner/MinimumSnap/waypoint_generator/clean
+
+#=============================================================================
 # Directory level rules for directory realsense-ros/realsense2_camera
 
 # Recursive "all" directory target.
@@ -765,7 +807,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=30 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=29 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -792,7 +834,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=29 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=28 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -819,12 +861,12 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=32,33 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=31 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googletest/CMakeFiles/gtest_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googletest/CMakeFiles/gtest_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/rule
@@ -846,7 +888,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=31 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=30 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1090,12 +1132,12 @@ realsense-ros/realsense2_description/CMakeFiles/clean_test_results_realsense2_de
 location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/all:
 	$(MAKE) -f location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/build.make location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/depend
 	$(MAKE) -f location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/build.make location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=14,15,16,17,18,19,20,21 "Built target camera_models"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21 "Built target camera_models"
 .PHONY : location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 9
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/rule
@@ -1549,12 +1591,12 @@ location/VINS-Fusion/camera_models/CMakeFiles/rosgraph_msgs_generate_messages_py
 location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/all: location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/all
 	$(MAKE) -f location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/build.make location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/depend
 	$(MAKE) -f location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/build.make location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=27,28 "Built target global_fusion_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=26,27 "Built target global_fusion_node"
 .PHONY : location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/rule
@@ -1576,12 +1618,12 @@ location/VINS-Fusion/global_fusion/CMakeFiles/global_fusion_node.dir/clean:
 location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/all:
 	$(MAKE) -f location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/build.make location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/depend
 	$(MAKE) -f location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/build.make location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=36,37,38 "Built target libGeographiccc"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=35,36 "Built target libGeographiccc"
 .PHONY : location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeographiccc.dir/rule
@@ -1603,12 +1645,12 @@ location/VINS-Fusion/global_fusion/ThirdParty/GeographicLib/CMakeFiles/libGeogra
 location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/all: location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/all
 	$(MAKE) -f location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/build.make location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/depend
 	$(MAKE) -f location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/build.make location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=41,42,43,44,45,46,47,48 "Built target loop_fusion_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=39,40,41,42,43,44,45,46 "Built target loop_fusion_node"
 .PHONY : location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 17
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/loop_fusion/CMakeFiles/loop_fusion_node.dir/rule
@@ -2278,7 +2320,7 @@ planner/EGO-Planner/plan_env/CMakeFiles/visualization_msgs_generate_messages_py.
 planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/all:
 	$(MAKE) -f planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/build.make planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/depend
 	$(MAKE) -f planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/build.make planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=52,53 "Built target plan_env"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=50,51 "Built target plan_env"
 .PHONY : planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2332,7 +2374,7 @@ planner/EGO-Planner/plan_env/CMakeFiles/visualization_msgs_generate_messages_eus
 planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/all:
 	$(MAKE) -f planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/build.make planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/depend
 	$(MAKE) -f planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/build.make planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=49,50 "Built target obj_generator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=47,48 "Built target obj_generator"
 .PHONY : planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2359,7 +2401,7 @@ planner/EGO-Planner/plan_env/CMakeFiles/obj_generator.dir/clean:
 planner/EGO-Planner/path_searching/CMakeFiles/path_searching.dir/all: planner/EGO-Planner/plan_env/CMakeFiles/plan_env.dir/all
 	$(MAKE) -f planner/EGO-Planner/path_searching/CMakeFiles/path_searching.dir/build.make planner/EGO-Planner/path_searching/CMakeFiles/path_searching.dir/depend
 	$(MAKE) -f planner/EGO-Planner/path_searching/CMakeFiles/path_searching.dir/build.make planner/EGO-Planner/path_searching/CMakeFiles/path_searching.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=51 "Built target path_searching"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=49 "Built target path_searching"
 .PHONY : planner/EGO-Planner/path_searching/CMakeFiles/path_searching.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2464,12 +2506,12 @@ planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/all: location/VINS-
 planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/all: location/VINS-Fusion/loop_fusion/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/build.make planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/depend
 	$(MAKE) -f planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/build.make planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=22,23 "Built target drone_detect"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=22 "Built target drone_detect"
 .PHONY : planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/all
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/rule
@@ -2491,7 +2533,7 @@ planner/EGO-Planner/drone_detect/CMakeFiles/drone_detect.dir/clean:
 location/rtk/CMakeFiles/location_node.dir/all:
 	$(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/depend
 	$(MAKE) -f location/rtk/CMakeFiles/location_node.dir/build.make location/rtk/CMakeFiles/location_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=39,40 "Built target location_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=37,38 "Built target location_node"
 .PHONY : location/rtk/CMakeFiles/location_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3468,7 +3510,7 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/all: real
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/rule
@@ -3495,12 +3537,12 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_l
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/all: realsense-ros/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/all
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/depend
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=66,67,68 "Built target realsense2_camera_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=64,65 "Built target realsense2_camera_generate_messages_lisp"
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/rule
@@ -3527,7 +3569,7 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/all: re
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/rule
@@ -3581,7 +3623,7 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_e
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/all: realsense-ros/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/all
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/depend
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=63,64,65 "Built target realsense2_camera_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=61,62,63 "Built target realsense2_camera_generate_messages_eus"
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -3613,7 +3655,7 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/all: rea
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/rule
@@ -3640,12 +3682,12 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_c
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/all: realsense-ros/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/all
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/depend
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=61,62 "Built target realsense2_camera_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=58,59,60 "Built target realsense2_camera_generate_messages_cpp"
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/rule
@@ -3807,12 +3849,12 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_p
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/all: realsense-ros/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/all
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/depend
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=71,72,73,74 "Built target realsense2_camera_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=69,70,71 "Built target realsense2_camera_generate_messages_py"
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/rule
@@ -3947,12 +3989,12 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_n
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/all: realsense-ros/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/all
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/depend
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=69,70 "Built target realsense2_camera_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=66,67,68 "Built target realsense2_camera_generate_messages_nodejs"
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/rule
@@ -4033,7 +4075,7 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/all: 
 
 # Build rule for subdir invocation for target.
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/rule
@@ -4541,7 +4583,7 @@ realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/all: realsense-
 realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/all: realsense-ros/realsense2_camera/CMakeFiles/dynamic_reconfigure_gencfg.dir/all
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/depend
 	$(MAKE) -f realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=58,59,60 "Built target realsense2_camera"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=56,57 "Built target realsense2_camera"
 .PHONY : realsense-ros/realsense2_camera/CMakeFiles/realsense2_camera.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4708,7 +4750,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_genpy.dir/all: planner/EGO-
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_genpy.dir/rule
@@ -4739,7 +4781,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages.dir/all: 
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages.dir/rule
@@ -4765,7 +4807,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.di
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.dir/all: planner/EGO-Planner/traj_utils/CMakeFiles/_traj_utils_generate_messages_check_deps_Bspline.dir/all
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.dir/depend
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=84,85 "Built target traj_utils_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=81,82 "Built target traj_utils_generate_messages_nodejs"
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4796,12 +4838,12 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/al
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/all: planner/EGO-Planner/traj_utils/CMakeFiles/_traj_utils_generate_messages_check_deps_Bspline.dir/all
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/depend
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=86,87,88 "Built target traj_utils_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=83,84 "Built target traj_utils_generate_messages_py"
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_py.dir/rule
@@ -4904,7 +4946,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_geneus.dir/clean:
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/all:
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/depend
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=76,77 "Built target traj_utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=73,74 "Built target traj_utils"
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/all
 
 # Build rule for subdir invocation for target.
@@ -4935,7 +4977,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/a
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/all: planner/EGO-Planner/traj_utils/CMakeFiles/_traj_utils_generate_messages_check_deps_Bspline.dir/all
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/depend
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=78,79 "Built target traj_utils_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=75,76 "Built target traj_utils_generate_messages_cpp"
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5020,7 +5062,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/a
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/all: planner/EGO-Planner/traj_utils/CMakeFiles/_traj_utils_generate_messages_check_deps_Bspline.dir/all
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/depend
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=80,81 "Built target traj_utils_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=77,78 "Built target traj_utils_generate_messages_eus"
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5051,7 +5093,7 @@ planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/
 planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/all: planner/EGO-Planner/traj_utils/CMakeFiles/_traj_utils_generate_messages_check_deps_Bspline.dir/all
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/depend
 	$(MAKE) -f planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/build.make planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=82,83 "Built target traj_utils_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=79,80 "Built target traj_utils_generate_messages_lisp"
 .PHONY : planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5134,12 +5176,12 @@ planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/all: planner/EGO-Plan
 planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/all: planner/EGO-Planner/traj_utils/CMakeFiles/traj_utils.dir/all
 	$(MAKE) -f planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/build.make planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/depend
 	$(MAKE) -f planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/build.make planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=11,12,13 "Built target bspline_opt"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=11,12 "Built target bspline_opt"
 .PHONY : planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/all
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/rule
@@ -5272,12 +5314,12 @@ planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/all: planner/EGO
 planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/all: planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/all
 	$(MAKE) -f planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/build.make planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/depend
 	$(MAKE) -f planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/build.make planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=24,25,26 "Built target ego_planner_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=23,24,25 "Built target ego_planner_node"
 .PHONY : planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/all
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/plan_manage/CMakeFiles/ego_planner_node.dir/rule
@@ -5302,12 +5344,12 @@ planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/all: planner/EGO-Plan
 planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/all: planner/EGO-Planner/bspline_opt/CMakeFiles/bspline_opt.dir/all
 	$(MAKE) -f planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/build.make planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/depend
 	$(MAKE) -f planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/build.make planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=75 "Built target traj_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=72 "Built target traj_server"
 .PHONY : planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/all
 
 # Build rule for subdir invocation for target.
 planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : planner/EGO-Planner/plan_manage/CMakeFiles/traj_server.dir/rule
@@ -5377,13 +5419,40 @@ planner/EGO-Planner/rosmsg_tcp_bridge/CMakeFiles/bridge_node.dir/clean:
 .PHONY : planner/EGO-Planner/rosmsg_tcp_bridge/CMakeFiles/bridge_node.dir/clean
 
 #=============================================================================
+# Target rules for target planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir
+
+# All Build rule for target.
+planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/all:
+	$(MAKE) -f planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/build.make planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/depend
+	$(MAKE) -f planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/build.make planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=85,86,87 "Built target trajectory_generator_node"
+.PHONY : planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/all
+
+# Build rule for subdir invocation for target.
+planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/rule
+
+# Convenience name for target.
+trajectory_generator_node: planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/rule
+
+.PHONY : trajectory_generator_node
+
+# clean rule for target.
+planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/clean:
+	$(MAKE) -f planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/build.make planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/clean
+.PHONY : planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/clean
+
+#=============================================================================
 # Target rules for target control/px4ctrl/CMakeFiles/px4ctrl_node.dir
 
 # All Build rule for target.
 control/px4ctrl/CMakeFiles/px4ctrl_node.dir/all:
 	$(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/depend
 	$(MAKE) -f control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=54,55,56,57 "Built target px4ctrl_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=52,53,54,55 "Built target px4ctrl_node"
 .PHONY : control/px4ctrl/CMakeFiles/px4ctrl_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5411,12 +5480,12 @@ location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/all: location/
 location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/all: location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/all
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/depend
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=34 "Built target kitti_gps_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=32,33 "Built target kitti_gps_test"
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 21
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_gps_test.dir/rule
@@ -5439,12 +5508,12 @@ location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/all: location
 location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/all: location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/all
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/depend
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=35 "Built target kitti_odom_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=34 "Built target kitti_odom_test"
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/kitti_odom_test.dir/rule
@@ -5467,7 +5536,7 @@ location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/all: location/VINS-
 location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/all: location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/all
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/depend
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=99,100 "Built target vins_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=98 "Built target vins_node"
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/all
 
 # Build rule for subdir invocation for target.
@@ -5494,12 +5563,12 @@ location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir/clean:
 location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/all: location/VINS-Fusion/camera_models/CMakeFiles/camera_models.dir/all
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/depend
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=89,90,91,92,93,94,95,96,97,98 "Built target vins_lib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=88,89,90,91,92,93,94,95,96,97 "Built target vins_lib"
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/all
 
 # Build rule for subdir invocation for target.
 location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 19
 	$(MAKE) -f CMakeFiles/Makefile2 location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/rule
@@ -5513,6 +5582,33 @@ vins_lib: location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/rule
 location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/clean:
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/clean
 .PHONY : location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/clean
+
+#=============================================================================
+# Target rules for target planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir
+
+# All Build rule for target.
+planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/all:
+	$(MAKE) -f planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/build.make planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/depend
+	$(MAKE) -f planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/build.make planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/skbt/AdaptWing/build/CMakeFiles --progress-num=99,100 "Built target waypoint_generator"
+.PHONY : planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/all
+
+# Build rule for subdir invocation for target.
+planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/skbt/AdaptWing/build/CMakeFiles 0
+.PHONY : planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/rule
+
+# Convenience name for target.
+waypoint_generator: planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/rule
+
+.PHONY : waypoint_generator
+
+# clean rule for target.
+planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/clean:
+	$(MAKE) -f planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/build.make planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/clean
+.PHONY : planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

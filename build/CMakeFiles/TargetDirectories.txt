@@ -294,6 +294,14 @@
 /home/skbt/AdaptWing/build/planner/EGO-Planner/rosmsg_tcp_bridge/CMakeFiles/edit_cache.dir
 /home/skbt/AdaptWing/build/planner/EGO-Planner/rosmsg_tcp_bridge/CMakeFiles/test.dir
 /home/skbt/AdaptWing/build/planner/EGO-Planner/rosmsg_tcp_bridge/CMakeFiles/bridge_node.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/install/strip.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/install/local.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/install.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/list_install_components.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/rebuild_cache.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/edit_cache.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/test.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir
 /home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/install/strip.dir
 /home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/install/local.dir
 /home/skbt/AdaptWing/build/control/px4ctrl/CMakeFiles/install.dir
@@ -313,3 +321,11 @@
 /home/skbt/AdaptWing/build/location/VINS-Fusion/vins_estimator/CMakeFiles/test.dir
 /home/skbt/AdaptWing/build/location/VINS-Fusion/vins_estimator/CMakeFiles/vins_node.dir
 /home/skbt/AdaptWing/build/location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/install/strip.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/install/local.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/install.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/list_install_components.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/rebuild_cache.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/edit_cache.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/test.dir
+/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir

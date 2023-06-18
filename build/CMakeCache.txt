@@ -868,7 +868,7 @@ gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 image_transport_DIR:PATH=/opt/ros/noetic/share/image_transport/cmake
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/noetic/lib/librospack.so
+lib:FILEPATH=/opt/ros/noetic/lib/libtf2.so
 
 //The directory containing a CMake configuration file for libmavconn.
 libmavconn_DIR:PATH=/opt/ros/noetic/share/libmavconn/cmake
@@ -1059,6 +1059,12 @@ traj_utils_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libroscpp.so;general;/
 //Value Computed by CMake
 traj_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/EGO-Planner/traj_utils
 
+//Value Computed by CMake
+trajectory_generator_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator
+
+//Value Computed by CMake
+trajectory_generator_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/MinimumSnap/trajectory_generator
+
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/noetic/share/trajectory_msgs/cmake
 
@@ -1079,6 +1085,12 @@ vins_lib_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libtf.so;general;/opt/ro
 
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/noetic/share/visualization_msgs/cmake
+
+//Value Computed by CMake
+waypoint_generator_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator
+
+//Value Computed by CMake
+waypoint_generator_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/MinimumSnap/waypoint_generator
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
@@ -1259,7 +1271,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=20
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=22
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1302,6 +1314,10 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Test COMPILER_SUPPORTS_CXX0X
+COMPILER_SUPPORTS_CXX0X:INTERNAL=1
+//Test COMPILER_SUPPORTS_CXX11
+COMPILER_SUPPORTS_CXX11:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //Details about finding Boost

@@ -20,9 +20,9 @@ LinearControl::LinearControl(Parameter_t &param) : param_(param)
 */
 quadrotor_msgs::Px4ctrlDebug
 LinearControl::calculateControl(const Desired_State_t &des,
-                                const Odom_Data_t &odom,
-                                const Imu_Data_t &imu, 
-                                Controller_Output_t &u)
+    const Odom_Data_t &odom,
+    const Imu_Data_t &imu, 
+    Controller_Output_t &u)
 {
   /* WRITE YOUR CODE HERE */
       //compute disired acceleration

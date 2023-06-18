@@ -144,8 +144,10 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/skbt/AdaptWing/build/planner/EGO-Planner/bspline_opt/cmake_install.cmake")
   include("/home/skbt/AdaptWing/build/planner/EGO-Planner/plan_manage/cmake_install.cmake")
   include("/home/skbt/AdaptWing/build/planner/EGO-Planner/rosmsg_tcp_bridge/cmake_install.cmake")
+  include("/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator/cmake_install.cmake")
   include("/home/skbt/AdaptWing/build/control/px4ctrl/cmake_install.cmake")
   include("/home/skbt/AdaptWing/build/location/VINS-Fusion/vins_estimator/cmake_install.cmake")
+  include("/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator/cmake_install.cmake")
 
 endif()
 

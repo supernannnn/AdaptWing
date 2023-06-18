@@ -2378,6 +2378,19 @@ bridge_node/fast:
 .PHONY : bridge_node/fast
 
 #=============================================================================
+# Target rules for targets named trajectory_generator_node
+
+# Build rule for target.
+trajectory_generator_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 trajectory_generator_node
+.PHONY : trajectory_generator_node
+
+# fast build rule for target.
+trajectory_generator_node/fast:
+	$(MAKE) -f planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/build.make planner/MinimumSnap/trajectory_generator/CMakeFiles/trajectory_generator_node.dir/build
+.PHONY : trajectory_generator_node/fast
+
+#=============================================================================
 # Target rules for targets named px4ctrl_node
 
 # Build rule for target.
@@ -2441,6 +2454,19 @@ vins_lib: cmake_check_build_system
 vins_lib/fast:
 	$(MAKE) -f location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/build.make location/VINS-Fusion/vins_estimator/CMakeFiles/vins_lib.dir/build
 .PHONY : vins_lib/fast
+
+#=============================================================================
+# Target rules for targets named waypoint_generator
+
+# Build rule for target.
+waypoint_generator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 waypoint_generator
+.PHONY : waypoint_generator
+
+# fast build rule for target.
+waypoint_generator/fast:
+	$(MAKE) -f planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/build.make planner/MinimumSnap/waypoint_generator/CMakeFiles/waypoint_generator.dir/build
+.PHONY : waypoint_generator/fast
 
 # Help Target
 help:
@@ -2625,11 +2651,13 @@ help:
 	@echo "... traj_server"
 	@echo "... quadrotor_msgs_generate_messages_py"
 	@echo "... bridge_node"
+	@echo "... trajectory_generator_node"
 	@echo "... px4ctrl_node"
 	@echo "... kitti_gps_test"
 	@echo "... kitti_odom_test"
 	@echo "... vins_node"
 	@echo "... vins_lib"
+	@echo "... waypoint_generator"
 .PHONY : help
 
 
