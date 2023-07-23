@@ -19,55 +19,38 @@ int main(int argc, char** argv){
 */
 void LOCATION::init(ros::NodeHandle& nh){
 
+    // WGS84_2_world();
+    // // baro_alti_sub   = nh.subscribe("/mavros/altitude", 1, &LOCATION::processBaroCallback, this);
+    // PX4_odom_data_sub = nh.subscribe("/mavros/local_position/odom", 1, &LOCATION::processPX4Odometry, this);
+    // odom_pub          = nh.advertise<nav_msgs::Odometry>("fusion/odom", 10);
 
-    baro_alti_sub   = nh.subscribe("/mavros/altitude", 1, &LOCATION::processBaroCallback, this);
-    imu_data_sub    = nh.subscribe("/mavros/imu/data", 1, &LOCATION::processImuCallback, this);
-    linear_vel_sub  = nh.subscribe("/mavros/local_position/velocity_local", 1, &LOCATION::processLinearVelCallback, this);
-
-
-    odom_pub = nh.advertise<nav_msgs::Odometry>("fusion/odom", 10);
-
-    processData_timer_ = nh.createTimer(ros::Duration(0.1), &LOCATION::processDataCallback, this);
-
-
+    // processData_timer_ = nh.createTimer(ros::Duration(0.1), &LOCATION::processDataCallback, this);
 
     /********这里使用线程来处理而不是ros中的定时器（timer），原因是这两个功能都是与硬件完成数据交互，需要长时间运行保证稳定性*******/
-    // std::thread rtk_thread(&LOCATION::read_rtk_via_uart, this);
-    // rtk_thread.detach();                                            //分离线程在后台运行
+    std::thread rtk_thread(&LOCATION::read_rtk_via_uart, this);
+    rtk_thread.detach();                                            //分离线程在后台运行
     // std::thread laser_thread(&LOCATION::read_laser_via_uart, this);
     // laser_thread.detach();
 
 }
 
-void LOCATION::processDataCallback(const ros::TimerEvent &e){
-
-    odom_msg_.header.stamp = ros::Time::now();
-    odom_msg_.header.frame_id = "odom";
-    odom_msg_.child_frame_id = "base_link";
-
-
-    odom_msg_.pose.pose.position.z = laser_altitude;
-
-
-    odom_msg_.pose.pose.orientation.x = ori_msg_.x;
-    odom_msg_.pose.pose.orientation.y = ori_msg_.y;
-    odom_msg_.pose.pose.orientation.z = ori_msg_.z;
-    odom_msg_.pose.pose.orientation.w = ori_msg_.w;
-
-
-    
-    odom_msg_.twist.twist.linear.x = linear_velocity.x;
-    odom_msg_.twist.twist.linear.y = linear_velocity.y;
-    odom_msg_.twist.twist.linear.z = linear_velocity.z;
-
-    odom_msg_.twist.twist.angular.x = angular_velocity.x;
-    odom_msg_.twist.twist.angular.y = angular_velocity.y;
-    odom_msg_.twist.twist.angular.z = angular_velocity.z;
-
-    odom_pub.publish(odom_msg_);  
+void LOCATION::processPX4Odometry(const nav_msgs::Odometry::ConstPtr &msg){
+    odom_msg_.header = msg->header;
+    odom_msg_.child_frame_id = msg->child_frame_id;
+    odom_msg_.pose.pose.orientation = msg->pose.pose.orientation;
+    odom_msg_.twist.twist.linear = msg->twist.twist.linear;
+    odom_msg_.twist.twist.angular = msg->twist.twist.angular;
+    odom_msg_.pose.covariance = msg->pose.covariance;
+    odom_msg_.twist.covariance = msg->twist.covariance;
 }
 
 
+void LOCATION::processDataCallback(const ros::TimerEvent &e){
+    odom_msg_.pose.pose.position.x = 0;
+    odom_msg_.pose.pose.position.y = 0;
+    odom_msg_.pose.pose.position.z = laser_altitude;
+    odom_pub.publish(odom_msg_);  
+}
 
 
 /*
@@ -158,41 +141,10 @@ void LOCATION::read_laser_via_uart(){
 }
 
 
-
-/*
-**IMU数据回调函数，用于接收姿态四元数和角速度
-*/
-void LOCATION::processImuCallback(const sensor_msgs::Imu::ConstPtr &msg){
-    ori_msg_.x = msg->orientation.x;
-    ori_msg_.y = msg->orientation.y;
-    ori_msg_.z = msg->orientation.z;
-    ori_msg_.w = msg->orientation.w;
-
-    angular_velocity.x = msg->angular_velocity.x;
-    angular_velocity.y = msg->angular_velocity.y;
-    angular_velocity.z = msg->angular_velocity.z;
-
-
-    Quaternion2Euler(ori_msg_, euler);
-}
-
-
-/*
-**线速度回调函数,用于接收机体线速度
-*/
-void LOCATION::processLinearVelCallback(const geometry_msgs::TwistStamped::ConstPtr &msg){
-    linear_velocity.x = msg->twist.linear.x;
-    linear_velocity.y = msg->twist.linear.y;
-    linear_velocity.z = msg->twist.linear.z;
-}
-
-
-
 /*
 **气压计数据处理回调函数
 */
 void LOCATION::processBaroCallback(const mavros_msgs::Altitude::ConstPtr &msg){
-
 
 }
 
@@ -245,6 +197,7 @@ void LOCATION::read_rtk_via_uart(){
         std::string line = serial_port.readline();
         cout << line << endl;
         parse_gpgga(line);
+
     }
 
 }
@@ -272,20 +225,20 @@ void LOCATION::parse_gpgga(const std::string& gpgga_data){
     }
     else
     {
-        double lat = std::stod(fields[2].substr(0, 2)) + std::stod(fields[2].substr(2)) / 100;
+        lat = std::stod(fields[2].substr(0, 2)) + std::stod(fields[2].substr(2)) / 100;
         if (fields[3] == "S")
         {
             lat = -lat;
         }
-        double lon = std::stod(fields[4].substr(0, 3)) + std::stod(fields[4].substr(3)) / 100;
+        lon = std::stod(fields[4].substr(0, 3)) + std::stod(fields[4].substr(3)) / 100;
         if (fields[5] == "W")
         {
             lon = -lon;
         }
-        double alt = std::stod(fields[9]);
+        alt = std::stod(fields[9]);
 
         cout << "高度：" << alt << endl;
-
+        WGS84_2_world();
     }
 }
 

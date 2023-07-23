@@ -15,10 +15,7 @@ int main(int argc, char** argv){
 }
 
 
-
 void TRAJECTORY_GENERATOR::init(ros::NodeHandle& nh){
-
-
     nh.param("planning/vel", _Vel, 1.0);
     nh.param("planning/acc", _Acc, 1.0);
     nh.param("planning/dev_order", _dev_order, 3);  // the order of derivative, _dev_order = 3->minimum jerk, _dev_order = 4->minimum snap
@@ -34,15 +31,16 @@ void TRAJECTORY_GENERATOR::init(ros::NodeHandle& nh){
     trajectory_vis_pub  = nh.advertise<visualization_msgs::Marker>("vis_trajectory", 1);
 
 
+    _path_vis_pub = nh.advertise<nav_msgs::Path>("vis_path", 1);
 
-    // std::thread test_thread(&TRAJECTORY_GENERATOR::waypointsCallback, this);
-    // test_thread.detach();
 
 }
 
 
 void TRAJECTORY_GENERATOR::waypointsCallback(const nav_msgs::Path::ConstPtr &msg){
     
+
+    _path_vis_pub.publish(msg);
 
     vector<Vector3d> wp_list;
     wp_list.clear();
@@ -65,38 +63,6 @@ void TRAJECTORY_GENERATOR::waypointsCallback(const nav_msgs::Path::ConstPtr &msg
     trajGeneration(waypoints);
 }
 
-// void TRAJECTORY_GENERATOR::waypointsCallback(){
-    
-
-//     waypoints = WAYPOINTS_GENERATOR::circle_waypoints_generator();
-//     waypoints.header.frame_id = std::string("world");
-//     waypoints.header.stamp = ros::Time::now();
-//     geometry_msgs::PoseStamped init_pose;
-//     init_pose.header = odom.header;
-//     init_pose.pose = odom.pose.pose;
-//     waypoints.poses.insert(waypoints.poses.begin(), init_pose);
-
-//     vector<Vector3d> wp_list;
-//     wp_list.clear();
-
-//     for (int k = 0; k < (int)waypoints.poses.size(); k++)
-//     {
-//         Vector3d pt( waypoints.poses[k].pose.position.x, waypoints.poses[k].pose.position.y, waypoints.poses[k].pose.position.z);
-//         wp_list.push_back(pt);
-//         ROS_INFO("waypoint%d: (%f, %f, %f)", k+1, pt(0), pt(1), pt(2));
-//     }
-
-
-//     //add the original point
-//     MatrixXd waypoints(wp_list.size() + 1, 3);  
-//     waypoints.row(0) = _startPos;
-
-//     for(int k = 0; k < (int)wp_list.size(); k++)
-//         waypoints.row(k+1) = wp_list[k];
-
-//     trajGeneration(waypoints);
-// }
-
 
 void TRAJECTORY_GENERATOR::trajGeneration(Eigen::MatrixXd& path){
     ros::Time time_start = ros::Time::now();
@@ -112,6 +78,11 @@ void TRAJECTORY_GENERATOR::trajGeneration(Eigen::MatrixXd& path){
 
     // use "trapezoidal velocity" time allocation
     _polyTime  = timeAllocation(path);
+
+
+    for (int i = 0; i < _polyTime.size(); i++){
+        cout << _polyTime[i] << endl;
+    }
 
     // generate a minimum-jerk/snap piecewise monomial polynomial-based trajectory
     _polyCoeff = trajectoryGeneratorWaypoint.PolyQPGeneration(_dev_order, path, vel, acc, _polyTime);
@@ -136,7 +107,6 @@ VectorXd TRAJECTORY_GENERATOR::timeAllocation(Eigen::MatrixXd& Path){
         double t2 = x2 / _Vel;
         time(i) = 2 * t1 + t2;
     }
-    // cout << time << endl;
 
     return time;
 }
@@ -156,7 +126,6 @@ Eigen::Vector3d TRAJECTORY_GENERATOR::getPosPoly(Eigen::MatrixXd polyCoeff, int 
               time(j) = pow(t, j);
 
         ret(dim) = coeff.dot(time);
-        //cout << "dim:" << dim << " coeff:" << coeff << endl;
     }
     return ret;
 }

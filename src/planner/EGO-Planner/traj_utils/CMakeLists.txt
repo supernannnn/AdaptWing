@@ -50,7 +50,7 @@ include_directories(
 
 link_directories(${PCL_LIBRARY_DIRS})
 
-add_library( traj_utils
+add_library(traj_utils
     src/planning_visualization.cpp 
     src/polynomial_traj.cpp 
     )

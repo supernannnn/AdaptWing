@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/skbt/AdaptWing/devel/include/**",
+        "/home/skbt/AdaptWing/src/planner/EGO-Planner/bspline_opt/include/**",
+        "/home/skbt/AdaptWing/src/location/VINS-Fusion/camera_models/include/**",
+        "/home/skbt/AdaptWing/src/planner/EGO-Planner/drone_detect/include/**",
+        "/home/skbt/AdaptWing/src/planner/EGO-Planner/plan_manage/include/**",
+        "/home/skbt/AdaptWing/src/planner/EGO-Planner/path_searching/include/**",
+        "/home/skbt/AdaptWing/src/planner/EGO-Planner/plan_env/include/**",
+        "/home/skbt/AdaptWing/src/realsense-ros/realsense2_camera/include/**",
+        "/home/skbt/AdaptWing/src/location/rtk/include/**",
+        "/home/skbt/AdaptWing/src/planner/EGO-Planner/traj_utils/include/**",
+        "/home/skbt/AdaptWing/src/planner/MinimumSnap/trajectory_generator/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14",
+      "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+    }
+  ],
+  "version": 4
+}

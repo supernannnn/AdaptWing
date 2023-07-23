@@ -19,7 +19,7 @@
       <param name="waypoint_type" value="self"/>
   </node>
 
-  <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find trajectory_generator)/rviz_config/test_traj.rviz" />
+  <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find trajectory_generator)/rviz_config/nuc.rviz" />
 
 
 </launch>

@@ -56,9 +56,9 @@ private:
     ros::Subscriber waypoints_sub;
     ros::Publisher path_vis_pub, trajectory_vis_pub;
 
+    ros::Publisher _path_vis_pub;
 
 
-    //void waypointsCallback();
     //路标回调函数
     void waypointsCallback(const nav_msgs::Path::ConstPtr &msg);
 
@@ -76,10 +76,6 @@ private:
 
     //计算多项式轨迹在给定时间参数t处的三维坐标
     Eigen::Vector3d getPosPoly(Eigen::MatrixXd polyCoeff, int k, double t);
-
-
-    nav_msgs::Path waypoints;
-
 
    
 

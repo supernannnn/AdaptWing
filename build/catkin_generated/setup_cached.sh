@@ -7,7 +7,9 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/home/skbt/BIT-Drone-360/devel/lib:/opt/ros/noetic/lib'
-export PKG_CONFIG_PATH='/home/skbt/BIT-Drone-360/devel/lib/pkgconfig:/opt/ros/noetic/lib/pkgconfig'
+export CMAKE_PREFIX_PATH="/home/skbt/AdaptWing/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/skbt/AdaptWing/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/skbt/AdaptWing/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/skbt/AdaptWing/build'
-export PYTHONPATH='/home/skbt/BIT-Drone-360/devel/lib/python3/dist-packages:/opt/ros/noetic/lib/python3/dist-packages'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/skbt/AdaptWing/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/skbt/AdaptWing/src:$ROS_PACKAGE_PATH"

@@ -40,25 +40,30 @@ typedef struct{
 class LOCATION{
 private:
 
+    int flag = 0;
 
     Euler euler;
 
     ros::Timer processData_timer_;
 
     nav_msgs::Odometry          odom_msg_;
-    geometry_msgs::Quaternion   ori_msg_;
 
-    geometry_msgs::Vector3      angular_velocity;
-    geometry_msgs::Vector3      linear_velocity;
+
+    geometry_msgs::Point world_point;
 
     //用于发布里程计信息
     ros::Publisher odom_pub;
 
-
-
     //订阅
-    ros::Subscriber baro_alti_sub, imu_data_sub, linear_vel_sub;
+    ros::Subscriber baro_alti_sub, PX4_odom_data_sub;
 
+    //RTK读取到的经纬高信息
+    double lat = 40;
+    double lon = 40;
+    double alt = 40;
+
+    //激光测距得到的距离值
+    double laser_altitude = 0;
 
     /*
     **RTK模块的串口参数设置
@@ -85,8 +90,11 @@ private:
     
 
     void processBaroCallback(const mavros_msgs::Altitude::ConstPtr &msg);
-    void processImuCallback(const sensor_msgs::Imu::ConstPtr &msg);
-    void processLinearVelCallback(const geometry_msgs::TwistStamped::ConstPtr &msg);
+
+    /*
+    **获取来自飞控的里程计信息，但是需要补偿位置信息
+    */
+    void processPX4Odometry(const nav_msgs::Odometry::ConstPtr &msg);
 
 
     /*
@@ -95,10 +103,16 @@ private:
     void Quaternion2Euler(const geometry_msgs::Quaternion &q, Euler& euler);
 
 
+    /*
+    **从RTK读取到的WGS84转换到世界坐标系，函数输入是经纬高，输出是世界坐标系的（x,y,z）
+    */
+    void WGS84_2_world();
+
+
 
 public:
 
-    float laser_altitude = 0;
+    
 
     //构造函数可以传递参数进来
     LOCATION(/* argvs */){

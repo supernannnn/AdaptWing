@@ -92,15 +92,9 @@ void load_waypoints(ros::NodeHandle &nh, const ros::Time &time_base)
 
 void publish_waypoints()
 {
-    waypoints.header.frame_id = std::string("world");
+    waypoints.header.frame_id = "map";
     waypoints.header.stamp = ros::Time::now();
     pub1.publish(waypoints);
-    geometry_msgs::PoseStamped init_pose;
-    init_pose.header = odom.header;
-    init_pose.pose = odom.pose.pose;
-    waypoints.poses.insert(waypoints.poses.begin(), init_pose);
-    // pub2.publish(waypoints);
-    waypoints.poses.clear();
 }
 
 void publish_waypoints_vis()
@@ -126,55 +120,8 @@ void publish_waypoints_vis()
     pub2.publish(poseArray);
 }
 
-void odom_callback(const nav_msgs::Odometry::ConstPtr &msg)
-{
-
-    while (12){
-         ROS_INFO("i am here");
-    }
-   
-    is_odom_ready = true;
-    odom = *msg;
-
-    if (waypointSegments.size())
-    {
-        ROS_INFO("i am here");
-
-        ros::Time expected_time = waypointSegments.front().header.stamp;
-        if (odom.header.stamp >= expected_time)
-        {
-            waypoints = waypointSegments.front();
-
-            std::stringstream ss;
-            ss << bfmt("Series send %.3f from start:\n") % trigged_time.toSec();
-            for (auto &pose_stamped : waypoints.poses)
-            {
-                ss << bfmt("P[%.2f, %.2f, %.2f] q(%.2f,%.2f,%.2f,%.2f)") %
-                          pose_stamped.pose.position.x % pose_stamped.pose.position.y %
-                          pose_stamped.pose.position.z % pose_stamped.pose.orientation.w %
-                          pose_stamped.pose.orientation.x % pose_stamped.pose.orientation.y %
-                          pose_stamped.pose.orientation.z
-                   << std::endl;
-            }
-            ROS_INFO_STREAM(ss.str());
-
-            publish_waypoints_vis();
-            publish_waypoints();
-
-            waypointSegments.pop_front();
-        }
-    }
-}
-
 void goal_callback(const geometry_msgs::PoseStamped::ConstPtr &msg)
 {
-    /*    if (!is_odom_ready) {
-        ROS_ERROR("[waypoint_generator] No odom!");
-        return;
-    }*/
-
-
-    
     ROS_INFO("goal_callback");
 
     trigged_time = ros::Time::now(); //odom.header.stamp;
@@ -320,8 +267,6 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "waypoint_generator");
     ros::NodeHandle n("~");
     n.param("waypoint_type", waypoint_type, string("manual"));
-
-    ros::Subscriber sub1 = n.subscribe("odom", 10, odom_callback);
     ros::Subscriber sub2 = n.subscribe("goal", 10, goal_callback);
     ros::Subscriber sub3 = n.subscribe("traj_start_trigger", 10, traj_start_trigger_callback);
     pub1 = n.advertise<nav_msgs::Path>("waypoints", 50);

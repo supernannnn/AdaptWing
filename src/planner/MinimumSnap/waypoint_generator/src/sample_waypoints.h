@@ -198,42 +198,40 @@ nav_msgs::Path eight()
 
 nav_msgs::Path self()
 {
-
     nav_msgs::Path waypoints;
     geometry_msgs::PoseStamped pt;
     pt.pose.orientation = tf::createQuaternionMsgFromYaw(0.0);    
-
-    pt.pose.position.x = 0;
-    pt.pose.position.y = 0;
-    pt.pose.position.z = 1;
-    waypoints.poses.push_back(pt);      
-    pt.pose.position.x = 1;
-    pt.pose.position.y = 1;
-    pt.pose.position.z = 1;
-    waypoints.poses.push_back(pt);  
-    pt.pose.position.x = 1;
+    pt.pose.position.x = 2;
     pt.pose.position.y = 2;
+    pt.pose.position.z = 3;
+    waypoints.poses.push_back(pt);      
+    pt.pose.position.x = 3;
+    pt.pose.position.y = 3;
+    pt.pose.position.z = 3;
+    waypoints.poses.push_back(pt);  
+    pt.pose.position.x = 4;
+    pt.pose.position.y = 3;
     pt.pose.position.z = 3;
     waypoints.poses.push_back(pt);  
     pt.pose.position.x = 4;
     pt.pose.position.y = 4;
-    pt.pose.position.z = 5;
+    pt.pose.position.z = 3;
     waypoints.poses.push_back(pt);       
     pt.pose.position.x = 5;
     pt.pose.position.y = 6;
-    pt.pose.position.z = 5;
+    pt.pose.position.z = 3;
     waypoints.poses.push_back(pt);      
     pt.pose.position.x = 6;
     pt.pose.position.y = 7;
-    pt.pose.position.z = 7;
+    pt.pose.position.z = 3;
     waypoints.poses.push_back(pt);  
     pt.pose.position.x = 9;
     pt.pose.position.y = 9;
-    pt.pose.position.z = 10;
+    pt.pose.position.z = 3;
     waypoints.poses.push_back(pt);  
     pt.pose.position.x = 10;
     pt.pose.position.y = 11;
-    pt.pose.position.z = 12;
+    pt.pose.position.z = 3;
     waypoints.poses.push_back(pt);
     return waypoints;   
 }  
