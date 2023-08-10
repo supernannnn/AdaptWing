@@ -21,8 +21,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/skbt/BIT-Drone-360/devel/include"
-  "/home/skbt/BIT-Drone-360/src/utils/uav_utils/include"
+  "/home/skbt/AdaptWing/devel/include"
+  "/home/skbt/AdaptWing/src/planner/Utils/utils/uav_utils/include"
   "/opt/ros/noetic/include"
   "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/eigen3"
@@ -32,6 +32,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/skbt/AdaptWing/build/planner/Utils/utils/quadrotor_msgs/CMakeFiles/encode_msgs.dir/DependInfo.cmake"
+  "/home/skbt/AdaptWing/build/planner/Utils/utils/quadrotor_msgs/CMakeFiles/decode_msgs.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

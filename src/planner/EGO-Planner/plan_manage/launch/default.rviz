@@ -70,6 +70,22 @@ Visualization Manager:
           Displays:
             - Class: rviz/Marker
               Enabled: true
+              Marker Topic: /trajectory_generator_node/waypoints
+              Name: waypoints
+              Namespaces:
+                "": true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: true
+              Marker Topic: /trajectory_generator_node/pillars
+              Name: Pillar
+              Namespaces:
+                "": true
+              Queue Size: 100
+              Value: true
+            - Class: rviz/Marker
+              Enabled: true
               Marker Topic: /drone_0_ego_planner_node/goal_point
               Name: goal_point
               Namespaces:

@@ -59,10 +59,10 @@
         <arg name="use_distinctive_trajs" value="true" />
         <!-- 1: use 2D Nav Goal to select goal  -->
         <!-- 2: use global waypoints below  -->
-        <arg name="flight_type" value="1" />
+        <arg name="flight_type" value="2" />
         <!-- global waypoints -->
         <!-- It generates a piecewise min-snap traj passing all waypoints -->
-        <arg name="point_num" value="4" />
+        <arg name="point_num" value="1" />
         <arg name="point0_x" value="15" />
         <arg name="point0_y" value="0" />
         <arg name="point0_z" value="1" />
@@ -94,7 +94,7 @@
         <arg name="map_size_x_" value="$(arg map_size_x)"/>
         <arg name="map_size_y_" value="$(arg map_size_y)"/>
         <arg name="map_size_z_" value="$(arg map_size_z)"/>
-        <arg name="init_x_" value="-15"/>
+        <arg name="init_x_" value="0"/>
         <arg name="init_y_" value="0"/>
         <arg name="init_z_" value="0.1"/>
         <arg name="odometry_topic" value="$(arg odom_topic)" />

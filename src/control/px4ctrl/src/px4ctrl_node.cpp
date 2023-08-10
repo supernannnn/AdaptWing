@@ -40,10 +40,25 @@ int main(int argc, char *argv[])
                                          ros::VoidConstPtr(),
                                          ros::TransportHints().tcpNoDelay());
 
+    //轨迹控制指令订阅
     ros::Subscriber cmd_sub =
         nh.subscribe<quadrotor_msgs::PositionCommand>("cmd",
                                                       100,
                                                       boost::bind(&Command_Data_t::feed, &fsm.cmd_data, _1),
+                                                      ros::VoidConstPtr(),
+                                                      ros::TransportHints().tcpNoDelay());
+    //线速度控制指令订阅
+    ros::Subscriber vel_cmd_sub =
+        nh.subscribe<geometry_msgs::TwistStamped>("vel_cmd",
+                                                      100,
+                                                      boost::bind(&Vel_Command_Data_t::feed, &fsm.vel_cmd_data, _1),
+                                                      ros::VoidConstPtr(),
+                                                      ros::TransportHints().tcpNoDelay());
+    //控制台状态订阅
+    ros::Subscriber console_state_sub =
+        nh.subscribe<console::ConsoleState>("/console/state",
+                                                      100,
+                                                      boost::bind(&Console_State_t::feed, &fsm.console_state, _1),
                                                       ros::VoidConstPtr(),
                                                       ros::TransportHints().tcpNoDelay());
 
@@ -77,6 +92,7 @@ int main(int argc, char *argv[])
                                                   ros::TransportHints().tcpNoDelay());
 
     fsm.ctrl_FCU_pub = nh.advertise<mavros_msgs::AttitudeTarget>("/mavros/setpoint_raw/attitude", 10);
+    fsm.ctrl_vel_pub = nh.advertise<geometry_msgs::TwistStamped>("/mavros/setpoint_velocity/cmd_vel", 10); 
     fsm.traj_start_trigger_pub = nh.advertise<geometry_msgs::PoseStamped>("/traj_start_trigger", 10);
 
     fsm.debug_pub = nh.advertise<quadrotor_msgs::Px4ctrlDebug>("/debugPx4ctrl", 10); // debug

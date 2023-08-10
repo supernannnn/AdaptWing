@@ -5,10 +5,13 @@
 #include <ros/assert.h>
 
 #include <geometry_msgs/PoseStamped.h>
+#include <geometry_msgs/TwistStamped.h>
 #include <nav_msgs/Odometry.h>
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/CommandLong.h>
 #include <mavros_msgs/CommandBool.h>
+
+#include <console/ConsoleState.h>
 
 #include "input.h"
 // #include "ThrustCurve.h"
@@ -36,13 +39,16 @@ public:
 	Odom_Data_t odom_data;
 	Imu_Data_t imu_data;
 	Command_Data_t cmd_data;
+	Vel_Command_Data_t vel_cmd_data;
 	Battery_Data_t bat_data;
 	Takeoff_Land_Data_t takeoff_land_data;
+
+	Console_State_t console_state;
 
 	LinearControl &controller;
 
 	ros::Publisher traj_start_trigger_pub;
-	ros::Publisher ctrl_FCU_pub;
+	ros::Publisher ctrl_FCU_pub, ctrl_vel_pub;
 	ros::Publisher debug_pub; //debug
 	ros::ServiceClient set_FCU_mode_srv;
 	ros::ServiceClient arming_client_srv;
@@ -73,6 +79,7 @@ public:
 	State_t get_state() { return state; }
 	bool get_landed() { return takeoff_land.landed; }
 
+
 private:
 	State_t state; // Should only be changed in PX4CtrlFSM::process() function!
 	AutoTakeoffLand_t takeoff_land;
@@ -98,6 +105,8 @@ private:
 
 	void publish_bodyrate_ctrl(const Controller_Output_t &u, const ros::Time &stamp);
 	void publish_attitude_ctrl(const Controller_Output_t &u, const ros::Time &stamp);
+	void publish_vel_ctrl(geometry_msgs::TwistStamped& vel_cmd , const ros::Time &stamp);
+
 	void publish_trigger(const nav_msgs::Odometry &odom_msg);
 };
 

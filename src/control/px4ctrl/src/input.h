@@ -7,12 +7,14 @@
 #include <sensor_msgs/Imu.h>
 #include <quadrotor_msgs/PositionCommand.h>
 #include <quadrotor_msgs/TakeoffLand.h>
+#include <geometry_msgs/TwistStamped.h>
 #include <mavros_msgs/RCIn.h>
 #include <mavros_msgs/State.h>
 #include <mavros_msgs/ExtendedState.h>
 #include <sensor_msgs/BatteryState.h>
 #include <uav_utils/utils.h>
 #include "PX4CtrlParam.h"
+#include <console/ConsoleState.h>
 
 class RC_Data_t
 {
@@ -116,6 +118,28 @@ public:
   Command_Data_t();
   void feed(quadrotor_msgs::PositionCommandConstPtr pMsg);
 };
+
+class Vel_Command_Data_t
+{
+public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+  geometry_msgs::TwistStamped msg;
+  ros::Time rcv_stamp;
+  Vel_Command_Data_t();
+  void feed(geometry_msgs::TwistStampedConstPtr pMsg);
+};
+
+
+class Console_State_t {
+public:
+  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+  console::ConsoleState msg;
+  ros::Time rcv_stamp;
+  Console_State_t();
+  void feed(console::ConsoleStateConstPtr pMsg);
+};
+
+
 
 class Battery_Data_t
 {

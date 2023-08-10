@@ -1,2 +1,6 @@
-devel/
+# 编译输出目录
 build/
+devel/
+
+#Vscode
+.vscode

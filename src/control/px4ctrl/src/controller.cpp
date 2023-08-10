@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+     
 
 double LinearControl::fromQuaternion2yaw(Eigen::Quaterniond q)
 {

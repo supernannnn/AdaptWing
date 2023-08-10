@@ -1,0 +1,64 @@
+<launch>
+
+  <node pkg="console" type="console_node" name="console_node" output="screen" required = "true" >
+    <remap from="~odom"      to="/fusion/odom"/>
+    <remap from="~depth"      to="/camera/depth/image_rect_raw"/>
+    <remap from="~planner_cmd"      to="/position_cmd"/>
+    <remap from="~image"      to="/camera/color/image_raw"/>
+
+    <!-- 规划器参数 -->
+    <param name="planning/vel"       value="0.3"  />
+    <param name="planning/acc"       value="1"  />
+    <param name="planning/dev_order" value="4"    />
+    <param name="planning/min_order" value="3"    />
+    <param name="vis/vis_traj_width" value="0.05" />
+
+    <!-- 控制超前参数 -->
+    <param name="time_forward" value="0.8" type="double" />
+
+
+    <!-- 第一关柱子坐标 -->
+    <param name="pillar1_x" value="2.0" type="double" />
+    <param name="pillar1_y" value="0.0" type="double" /> 
+    <param name="pillar1_z" value="1" type="double" />
+
+    <param name="pillar2_x" value="3.0" type="double" />
+    <param name="pillar2_y" value="0.0" type="double" />
+    <param name="pillar2_z" value="1" type="double" />
+
+    <param name="pillar3_x" value="4.0" type="double" />
+    <param name="pillar3_y" value="0.0" type="double" /> 
+    <param name="pillar3_z" value="1" type="double" />
+
+    <param name="pillar4_x" value="5.0" type="double" />
+    <param name="pillar4_y" value="0.0" type="double" />
+    <param name="pillar4_z" value="1" type="double" />
+
+
+
+    <!-- 第二关隧道起点、终点坐标 -->
+    <param name="tunnel_start_x" value="3.0" type="double" />
+    <param name="tunnel_start_y" value="0.0" type="double" /> 
+    <param name="tunnel_start_z" value="1.5" type="double" />
+
+    <param name="tunnel_end_x" value="4.0" type="double" />
+    <param name="tunnel_end_y" value="0.0" type="double" />
+    <param name="tunnel_end_z" value="1.5" type="double" />
+
+
+
+    <!-- 第二关隧道起点、终点坐标 -->
+    <param name="terminal_apriltag_x" value="6.0" type="double" />
+    <param name="terminal_apriltag_y" value="1.0" type="double" /> 
+    <param name="terminal_apriltag_z" value="1.0" type="double" />
+
+
+
+
+
+
+  </node>
+
+  <!-- <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find trajectory_generator)/rviz_config/nuc.rviz" /> -->
+
+</launch>

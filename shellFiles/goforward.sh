@@ -1,0 +1,1 @@
+rostopic pub -1  /mavros/setpoint_velocity/cmd_vel geometry_msgs/TwistStamped "takeoff_land_cmd: 1"

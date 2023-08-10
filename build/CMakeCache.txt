@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a file.
+ARMADILLO_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ARMADILLO_LIBRARY:FILEPATH=/usr/lib/libarmadillo.so
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
@@ -90,9 +96,8 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
-//Choose the type of build, options are: None Debug Release RelWithDebInfo
-// MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+//Choose the build type
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -656,6 +661,18 @@ QHULL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libqhull.so
 //Path to a library.
 QHULL_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libqhull.so
 
+//The directory containing a CMake configuration file for Qt5Core.
+Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
+
+//The directory containing a CMake configuration file for Qt5Gui.
+Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
+
+//The directory containing a CMake configuration file for Qt5Widgets.
+Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
+
+//The directory containing a CMake configuration file for Qt5.
+Qt5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
+
 //Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
@@ -704,6 +721,24 @@ actionlib_DIR:PATH=/opt/ros/noetic/share/actionlib/cmake
 //The directory containing a CMake configuration file for actionlib_msgs.
 actionlib_msgs_DIR:PATH=/opt/ros/noetic/share/actionlib_msgs/cmake
 
+//The directory containing a CMake configuration file for apriltag.
+apriltag_DIR:PATH=/usr/local/share/apriltag/cmake
+
+//Value Computed by CMake
+apriltag_ros_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Apriltag/apriltag_ros/apriltag_ros
+
+//Value Computed by CMake
+apriltag_ros_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Apriltag/apriltag_ros/apriltag_ros
+
+//Dependencies for the target
+apriltag_ros_common_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libcv_bridge.so;general;/opt/ros/noetic/lib/libimage_geometry.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;apriltag::apriltag;
+
+//Dependencies for the target
+apriltag_ros_continuous_detector_LIB_DEPENDS:STATIC=general;apriltag_ros_common;general;/opt/ros/noetic/lib/libcv_bridge.so;general;/opt/ros/noetic/lib/libimage_geometry.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Dependencies for the target
+apriltag_ros_single_image_detector_LIB_DEPENDS:STATIC=general;apriltag_ros_common;general;/opt/ros/noetic/lib/libcv_bridge.so;general;/opt/ros/noetic/lib/libimage_geometry.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
 //The directory containing a CMake configuration file for bond.
 bond_DIR:PATH=/opt/ros/noetic/share/bond/cmake
 
@@ -749,8 +784,50 @@ camera_models_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/location/VINS-Fusion/ca
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
+//Value Computed by CMake
+catkin_simple_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/catkin_simple
+
+//The directory containing a CMake configuration file for catkin_simple.
+catkin_simple_DIR:PATH=/home/skbt/AdaptWing/devel/share/catkin_simple/cmake
+
+//Value Computed by CMake
+catkin_simple_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/catkin_simple
+
+//The directory containing a CMake configuration file for circle_dectecion.
+circle_dectecion_DIR:PATH=circle_dectecion_DIR-NOTFOUND
+
+//Value Computed by CMake
+circle_detection_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/circle_detection/circle_detection
+
+//The directory containing a CMake configuration file for circle_detection.
+circle_detection_DIR:PATH=/home/skbt/AdaptWing/devel/share/circle_detection/cmake
+
+//Dependencies for the target
+circle_detection_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libcv_bridge.so;general;edcircles;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/usr/include/opencv4;
+
+//Value Computed by CMake
+circle_detection_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/circle_detection/circle_detection
+
 //The directory containing a CMake configuration file for class_loader.
 class_loader_DIR:PATH=/opt/ros/noetic/share/class_loader/cmake
+
+//The directory containing a CMake configuration file for cmake_modules.
+cmake_modules_DIR:PATH=/opt/ros/noetic/share/cmake_modules/cmake
+
+//Value Computed by CMake
+cmake_utils_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/cmake_utils
+
+//The directory containing a CMake configuration file for cmake_utils.
+cmake_utils_DIR:PATH=/home/skbt/AdaptWing/devel/share/cmake_utils/cmake
+
+//Value Computed by CMake
+cmake_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/cmake_utils
+
+//Value Computed by CMake
+console_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/console
+
+//Value Computed by CMake
+console_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/console
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
@@ -760,6 +837,24 @@ cv_bridge_DIR:PATH=/opt/ros/noetic/share/cv_bridge/cmake
 
 //The directory containing a CMake configuration file for ddynamic_reconfigure.
 ddynamic_reconfigure_DIR:PATH=/opt/ros/noetic/share/ddynamic_reconfigure/cmake
+
+//Value Computed by CMake
+decomp_ros_msgs_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/DecompROS/decomp_ros_msgs
+
+//The directory containing a CMake configuration file for decomp_ros_msgs.
+decomp_ros_msgs_DIR:PATH=/home/skbt/AdaptWing/devel/share/decomp_ros_msgs/cmake
+
+//Value Computed by CMake
+decomp_ros_msgs_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/DecompROS/decomp_ros_msgs
+
+//Value Computed by CMake
+decomp_ros_utils_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/DecompROS/decomp_ros_utils
+
+//Value Computed by CMake
+decomp_ros_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/DecompROS/decomp_ros_utils
+
+//Dependencies for the target
+decomp_rviz_plugins_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/librviz.so;general;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;general;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libinteractive_markers.so;general;/opt/ros/noetic/lib/liblaser_geometry.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libresource_retriever.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/librosconsole_bridge.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;Qt5::Widgets;general;/opt/ros/noetic/lib/librviz.so;general;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;general;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libinteractive_markers.so;general;/opt/ros/noetic/lib/liblaser_geometry.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libresource_retriever.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/librosconsole_bridge.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/noetic/share/rviz/cmake/../../../lib/librviz_default_plugin.so;
 
 //The directory containing a CMake configuration file for diagnostic_msgs.
 diagnostic_msgs_DIR:PATH=/opt/ros/noetic/share/diagnostic_msgs/cmake
@@ -775,6 +870,18 @@ drone_detect_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/EGO-Planner/dron
 
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/noetic/share/dynamic_reconfigure/cmake
+
+//Value Computed by CMake
+edcircles_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/circle_detection/EDcircles
+
+//The directory containing a CMake configuration file for edcircles.
+edcircles_DIR:PATH=/home/skbt/AdaptWing/devel/share/edcircles/cmake
+
+//Dependencies for the target
+edcircles_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;
+
+//Value Computed by CMake
+edcircles_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/circle_detection/EDcircles
 
 //Value Computed by CMake
 ego_planner_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/EGO-Planner/plan_manage
@@ -864,20 +971,44 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
+//The directory containing a CMake configuration file for image_geometry.
+image_geometry_DIR:PATH=/opt/ros/noetic/share/image_geometry/cmake
+
 //The directory containing a CMake configuration file for image_transport.
 image_transport_DIR:PATH=/opt/ros/noetic/share/image_transport/cmake
 
+//The directory containing a CMake configuration file for interactive_markers.
+interactive_markers_DIR:PATH=/opt/ros/noetic/share/interactive_markers/cmake
+
+//The directory containing a CMake configuration file for laser_geometry.
+laser_geometry_DIR:PATH=/opt/ros/noetic/share/laser_geometry/cmake
+
 //Path to a library.
-lib:FILEPATH=/opt/ros/noetic/lib/libtf2.so
+lib:FILEPATH=/opt/ros/noetic/lib/librospack.so
 
 //The directory containing a CMake configuration file for libmavconn.
 libmavconn_DIR:PATH=/opt/ros/noetic/share/libmavconn/cmake
+
+//Value Computed by CMake
+local_sensing_node_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/local_sensing
+
+//Value Computed by CMake
+local_sensing_node_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/local_sensing
 
 //Value Computed by CMake
 loop_fusion_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/location/VINS-Fusion/loop_fusion
 
 //Value Computed by CMake
 loop_fusion_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/location/VINS-Fusion/loop_fusion
+
+//Value Computed by CMake
+map_generator_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/map_generator
+
+//Value Computed by CMake
+map_generator_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/map_generator
+
+//The directory containing a CMake configuration file for map_msgs.
+map_msgs_DIR:PATH=/opt/ros/noetic/share/map_msgs/cmake
 
 //The directory containing a CMake configuration file for mavros.
 mavros_DIR:PATH=/opt/ros/noetic/share/mavros/cmake
@@ -894,11 +1025,32 @@ message_generation_DIR:PATH=/opt/ros/noetic/share/message_generation/cmake
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
+//Value Computed by CMake
+mockamap_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/mockamap
+
+//Value Computed by CMake
+mockamap_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/mockamap
+
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/noetic/share/nav_msgs/cmake
 
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
+
+//The directory containing a CMake configuration file for nodelet_topic_tools.
+nodelet_topic_tools_DIR:PATH=/opt/ros/noetic/share/nodelet_topic_tools/cmake
+
+//Value Computed by CMake
+odom_fusion_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/location/odom_fusion
+
+//Value Computed by CMake
+odom_fusion_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/location/odom_fusion
+
+//Value Computed by CMake
+odom_visualization_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/odom_visualization
+
+//Value Computed by CMake
+odom_visualization_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/odom_visualization
 
 //Value Computed by CMake
 path_searching_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/EGO-Planner/path_searching
@@ -911,6 +1063,15 @@ path_searching_LIB_DEPENDS:STATIC=general;plan_env;general;/opt/ros/noetic/lib/l
 
 //Value Computed by CMake
 path_searching_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/EGO-Planner/path_searching
+
+//The directory containing a CMake configuration file for pcl_conversions.
+pcl_conversions_DIR:PATH=/opt/ros/noetic/share/pcl_conversions/cmake
+
+//The directory containing a CMake configuration file for pcl_msgs.
+pcl_msgs_DIR:PATH=/opt/ros/noetic/share/pcl_msgs/cmake
+
+//The directory containing a CMake configuration file for pcl_ros.
+pcl_ros_DIR:PATH=/opt/ros/noetic/share/pcl_ros/cmake
 
 //Path to a library.
 pkgcfg_lib_PC_FLANN_flann:FILEPATH=/usr/lib/x86_64-linux-gnu/libflann.so
@@ -946,13 +1107,34 @@ plan_env_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/EGO-Planner/plan_env
 pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
 
 //Value Computed by CMake
+poscmd_2_odom_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/fake_drone
+
+//Value Computed by CMake
+poscmd_2_odom_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/fake_drone
+
+//Value Computed by CMake
+pose_utils_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/pose_utils
+
+//The directory containing a CMake configuration file for pose_utils.
+pose_utils_DIR:PATH=/home/skbt/AdaptWing/devel/share/pose_utils/cmake
+
+//Value Computed by CMake
+pose_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/pose_utils
+
+//Value Computed by CMake
 px4ctrl_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/control/px4ctrl
 
 //Value Computed by CMake
 px4ctrl_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/control/px4ctrl
 
+//Value Computed by CMake
+quadrotor_msgs_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/quadrotor_msgs
+
 //The directory containing a CMake configuration file for quadrotor_msgs.
-quadrotor_msgs_DIR:PATH=/home/skbt/BIT-Drone-360/devel/share/quadrotor_msgs/cmake
+quadrotor_msgs_DIR:PATH=/home/skbt/AdaptWing/devel/share/quadrotor_msgs/cmake
+
+//Value Computed by CMake
+quadrotor_msgs_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/quadrotor_msgs
 
 //The directory containing a CMake configuration file for realsense2.
 realsense2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/realsense2
@@ -972,8 +1154,20 @@ realsense2_description_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/realsense-ro
 //Value Computed by CMake
 realsense2_description_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/realsense-ros/realsense2_description
 
+//The directory containing a CMake configuration file for resource_retriever.
+resource_retriever_DIR:PATH=/opt/ros/noetic/share/resource_retriever/cmake
+
+//The directory containing a CMake configuration file for rosbag.
+rosbag_DIR:PATH=/opt/ros/noetic/share/rosbag/cmake
+
+//The directory containing a CMake configuration file for rosbag_storage.
+rosbag_storage_DIR:PATH=/opt/ros/noetic/share/rosbag_storage/cmake
+
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
+
+//The directory containing a CMake configuration file for rosconsole_bridge.
+rosconsole_bridge_DIR:PATH=/opt/ros/noetic/share/rosconsole_bridge/cmake
 
 //The directory containing a CMake configuration file for roscpp.
 roscpp_DIR:PATH=/opt/ros/noetic/share/roscpp/cmake
@@ -996,6 +1190,9 @@ roslib_DIR:PATH=/opt/ros/noetic/share/roslib/cmake
 //The directory containing a CMake configuration file for roslint.
 roslint_DIR:PATH=/opt/ros/noetic/share/roslint/cmake
 
+//The directory containing a CMake configuration file for roslz4.
+roslz4_DIR:PATH=/opt/ros/noetic/share/roslz4/cmake
+
 //Value Computed by CMake
 rosmsg_tcp_bridge_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/EGO-Planner/rosmsg_tcp_bridge
 
@@ -1017,6 +1214,18 @@ rtk_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/location/rtk
 //Value Computed by CMake
 rtk_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/location/rtk
 
+//The directory containing a CMake configuration file for rviz.
+rviz_DIR:PATH=/opt/ros/noetic/share/rviz/cmake
+
+//Value Computed by CMake
+rviz_plugins_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/rviz_plugins
+
+//Dependencies for the target
+rviz_plugins_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/librviz.so;general;/usr/lib/x86_64-linux-gnu/libOgreOverlay.so;general;/usr/lib/x86_64-linux-gnu/libOgreMain.so;general;/usr/lib/x86_64-linux-gnu/libOpenGL.so;general;/usr/lib/x86_64-linux-gnu/libGLX.so;general;/usr/lib/x86_64-linux-gnu/libGLU.so;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libinteractive_markers.so;general;/opt/ros/noetic/lib/liblaser_geometry.so;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libresource_retriever.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/librosconsole_bridge.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;encode_msgs;general;decode_msgs;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;Qt5::Widgets;
+
+//Value Computed by CMake
+rviz_plugins_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/rviz_plugins
+
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
@@ -1026,6 +1235,21 @@ serial_DIR:PATH=/opt/ros/noetic/share/serial/cmake
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/noetic/share/smclib/cmake
 
+//Value Computed by CMake
+so3_control_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/so3_control
+
+//Value Computed by CMake
+so3_control_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/so3_control
+
+//Dependencies for the target
+so3_control_nodelet_LIB_DEPENDS:STATIC=general;encode_msgs;general;decode_msgs;general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;SO3Control;
+
+//Value Computed by CMake
+so3_quadrotor_simulator_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/uav_simulator/so3_quadrotor_simulator
+
+//Value Computed by CMake
+so3_quadrotor_simulator_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/uav_simulator/so3_quadrotor_simulator
+
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
 
@@ -1034,6 +1258,9 @@ std_srvs_DIR:PATH=/opt/ros/noetic/share/std_srvs/cmake
 
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/noetic/share/tf2/cmake
+
+//The directory containing a CMake configuration file for tf2_eigen.
+tf2_eigen_DIR:PATH=/opt/ros/noetic/share/tf2_eigen/cmake
 
 //The directory containing a CMake configuration file for tf2_msgs.
 tf2_msgs_DIR:PATH=/opt/ros/noetic/share/tf2_msgs/cmake
@@ -1047,6 +1274,9 @@ tf2_ros_DIR:PATH=/opt/ros/noetic/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/noetic/share/tf/cmake
 
+//The directory containing a CMake configuration file for topic_tools.
+topic_tools_DIR:PATH=/opt/ros/noetic/share/topic_tools/cmake
+
 //Value Computed by CMake
 traj_utils_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/EGO-Planner/traj_utils
 
@@ -1059,17 +1289,26 @@ traj_utils_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libroscpp.so;general;/
 //Value Computed by CMake
 traj_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/EGO-Planner/traj_utils
 
-//Value Computed by CMake
-trajectory_generator_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/MinimumSnap/trajectory_generator
-
-//Value Computed by CMake
-trajectory_generator_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/MinimumSnap/trajectory_generator
-
 //The directory containing a CMake configuration file for trajectory_msgs.
 trajectory_msgs_DIR:PATH=/opt/ros/noetic/share/trajectory_msgs/cmake
 
+//Value Computed by CMake
+uav_utils_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/utils/uav_utils
+
 //The directory containing a CMake configuration file for uav_utils.
-uav_utils_DIR:PATH=/home/skbt/BIT-Drone-360/devel/share/uav_utils/cmake
+uav_utils_DIR:PATH=/home/skbt/AdaptWing/devel/share/uav_utils/cmake
+
+//Value Computed by CMake
+uav_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/utils/uav_utils
+
+//The directory containing a CMake configuration file for urdf.
+urdf_DIR:PATH=/opt/ros/noetic/share/urdf/cmake
+
+//Value Computed by CMake
+usb_camera_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Apriltag/usb_camera
+
+//Value Computed by CMake
+usb_camera_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Apriltag/usb_camera
 
 //The directory containing a CMake configuration file for uuid_msgs.
 uuid_msgs_DIR:PATH=/opt/ros/noetic/share/uuid_msgs/cmake
@@ -1083,14 +1322,20 @@ vins_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/location/VINS-Fusion/vins_estima
 //Dependencies for the target
 vins_lib_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libtf.so;general;/opt/ros/noetic/lib/libtf2_ros.so;general;/opt/ros/noetic/lib/libactionlib.so;general;/opt/ros/noetic/lib/libtf2.so;general;/opt/ros/noetic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.2.0;general;camera_models;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;opencv_calib3d;general;opencv_core;general;opencv_dnn;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_stitching;general;opencv_video;general;opencv_videoio;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dnn_objdetect;general;opencv_dnn_superres;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_hfs;general;opencv_img_hash;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_quality;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_shape;general;opencv_stereo;general;opencv_structured_light;general;opencv_superres;general;opencv_surface_matching;general;opencv_text;general;opencv_tracking;general;opencv_videostab;general;opencv_viz;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;Ceres::ceres;
 
+//Value Computed by CMake
+visual_utils_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/Utils/visual_utils
+
+//The directory containing a CMake configuration file for visual_utils.
+visual_utils_DIR:PATH=/home/skbt/AdaptWing/devel/share/visual_utils/cmake
+
+//Dependencies for the target
+visual_utils_LIB_DEPENDS:STATIC=general;encode_msgs;general;decode_msgs;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;
+
+//Value Computed by CMake
+visual_utils_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/Utils/visual_utils
+
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/noetic/share/visualization_msgs/cmake
-
-//Value Computed by CMake
-waypoint_generator_BINARY_DIR:STATIC=/home/skbt/AdaptWing/build/planner/MinimumSnap/waypoint_generator
-
-//Value Computed by CMake
-waypoint_generator_SOURCE_DIR:STATIC=/home/skbt/AdaptWing/src/planner/MinimumSnap/waypoint_generator
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
@@ -1100,6 +1345,10 @@ xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: ARMADILLO_INCLUDE_DIR
+ARMADILLO_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ARMADILLO_LIBRARY
+ARMADILLO_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_DATE_TIME_LIBRARY_DEBUG
 Boost_DATE_TIME_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Boost_DATE_TIME_LIBRARY_RELEASE
@@ -1135,6 +1384,8 @@ CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/skbt/AdaptWing/build/test_results
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
+//STRINGS property for variable: CMAKE_BUILD_TYPE
+CMAKE_BUILD_TYPE-STRINGS:INTERNAL=Coverage;Debug;Release;MinSizeRel;RelWithDebInfo
 //This is the directory where this CMakeCache.txt was created
 CMAKE_CACHEFILE_DIR:INTERNAL=/home/skbt/AdaptWing/build
 //Major version of cmake used to create the current loaded cache
@@ -1271,7 +1522,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=22
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=42
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1320,6 +1571,8 @@ COMPILER_SUPPORTS_CXX0X:INTERNAL=1
 COMPILER_SUPPORTS_CXX11:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//Details about finding Armadillo
+FIND_PACKAGE_MESSAGE_DETAILS_Armadillo:INTERNAL=[/usr/lib/libarmadillo.so][/usr/include][v9.800.4()]
 //Details about finding Boost
 FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/include][cfound components: system filesystem date_time iostreams regex ][v1.71.0(1.55.0)]
 //Details about finding Eigen
@@ -1327,7 +1580,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_Eigen:INTERNAL=[/usr/include/eigen3][v(3.1)]
 //Details about finding FLANN
 FIND_PACKAGE_MESSAGE_DETAILS_FLANN:INTERNAL=[/usr/lib/x86_64-linux-gnu/libflann_cpp.so][/usr/include][v()]
 //Details about finding OpenCV
-FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.2.0(4)]
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/usr][v4.2.0()]
 //Details about finding OpenNI
 FIND_PACKAGE_MESSAGE_DETAILS_OpenNI:INTERNAL=[/usr/lib/libOpenNI.so][/usr/include/ni][v()]
 //Details about finding OpenNI2

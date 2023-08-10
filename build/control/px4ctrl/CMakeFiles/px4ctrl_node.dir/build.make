@@ -139,8 +139,8 @@ px4ctrl_node_EXTERNAL_OBJECTS =
 /home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/src/controller.cpp.o
 /home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/src/input.cpp.o
 /home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: control/px4ctrl/CMakeFiles/px4ctrl_node.dir/build.make
-/home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /home/skbt/BIT-Drone-360/devel/lib/libencode_msgs.so
-/home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /home/skbt/BIT-Drone-360/devel/lib/libdecode_msgs.so
+/home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /home/skbt/AdaptWing/devel/lib/libencode_msgs.so
+/home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /home/skbt/AdaptWing/devel/lib/libdecode_msgs.so
 /home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /opt/ros/noetic/lib/libmavros.so
 /home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /usr/lib/x86_64-linux-gnu/libGeographic.so
 /home/skbt/AdaptWing/devel/lib/px4ctrl/px4ctrl_node: /opt/ros/noetic/lib/libdiagnostic_updater.so

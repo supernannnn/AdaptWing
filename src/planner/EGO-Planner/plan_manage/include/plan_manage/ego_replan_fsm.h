@@ -64,7 +64,7 @@ namespace ego_planner
     bool enable_fail_safe_;
 
     /* planning data */
-    bool have_trigger_, have_target_, have_odom_, have_new_target_, have_recv_pre_agent_;
+    bool have_trigger_, have_target_, have_odom_, have_new_target_, have_recv_pre_agent_, take_off_finished;
     FSM_EXEC_STATE exec_state_;
     int continously_called_times_{0};
 
@@ -82,7 +82,7 @@ namespace ego_planner
     /* ROS utils */
     ros::NodeHandle node_;
     ros::Timer exec_timer_, safety_timer_;
-    ros::Subscriber waypoint_sub_, odom_sub_, swarm_trajs_sub_, broadcast_bspline_sub_, trigger_sub_;
+    ros::Subscriber waypoint_sub_, odom_sub_, swarm_trajs_sub_, broadcast_bspline_sub_, trigger_sub_, ego_planner_wps_sub;
     ros::Publisher replan_pub_, new_pub_, bspline_pub_, data_disp_pub_, swarm_trajs_pub_, broadcast_bspline_pub_;
 
     /* helper functions */
@@ -108,6 +108,7 @@ namespace ego_planner
     void odometryCallback(const nav_msgs::OdometryConstPtr &msg);
     void swarmTrajsCallback(const traj_utils::MultiBsplinesPtr &msg);
     void BroadcastBsplineCallback(const traj_utils::BsplinePtr &msg);
+    void WpsCallback(const nav_msgs::PathPtr& msg);
 
     bool checkCollision();
     void publishSwarmTrajs(bool startup_pub);

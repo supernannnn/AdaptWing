@@ -23,6 +23,7 @@ namespace ego_planner
     nh.param("fsm/fail_safe", enable_fail_safe_, true);
 
     have_trigger_ = !flag_realworld_experiment_;
+    take_off_finished = !flag_realworld_experiment_;
 
     nh.param("fsm/waypoint_num", waypoint_num_, -1);
     for (int i = 0; i < waypoint_num_; i++)
@@ -65,25 +66,27 @@ namespace ego_planner
     }
     else if (target_type_ == TARGET_TYPE::PRESET_TARGET)
     {
-      trigger_sub_ = nh.subscribe("/traj_start_trigger", 1, &EGOReplanFSM::triggerCallback, this);
+      trigger_sub_          = nh.subscribe("/traj_start_trigger", 1, &EGOReplanFSM::triggerCallback, this);
+      ego_planner_wps_sub  = nh.subscribe("/ego_planner_wps", 1, &EGOReplanFSM::WpsCallback, this);
+      
 
-      ROS_INFO("Wait for 1 second.");
-      int count = 0;
-      while (ros::ok() && count++ < 1000)
-      {
-        ros::spinOnce();
-        ros::Duration(0.001).sleep();
-      }
+      // ROS_INFO("Wait for 1 second.");
+      // int count = 0;
+      // while (ros::ok() && count++ < 1000)
+      // {
+      //   ros::spinOnce();
+      //   ros::Duration(0.001).sleep();
+      // }
 
-      ROS_WARN("Waiting for trigger from [n3ctrl] from RC");
+      // ROS_WARN("Waiting for trigger from [n3ctrl] from RC");
 
-      while (ros::ok() && (!have_odom_ || !have_trigger_))
-      {
-        ros::spinOnce();
-        ros::Duration(0.001).sleep();
-      }
+      // while (ros::ok() && (!have_odom_ || !have_trigger_))
+      // {
+      //   ros::spinOnce();
+      //   ros::Duration(0.001).sleep();
+      // }
 
-      readGivenWps();
+      // readGivenWps();
     }
     else
       cout << "Wrong target_type_ value! target_type_=" << target_type_ << endl;
@@ -97,15 +100,15 @@ namespace ego_planner
       return;
     }
 
-    wps_.resize(waypoint_num_);
-    for (int i = 0; i < waypoint_num_; i++)
-    {
-      wps_[i](0) = waypoints_[i][0];
-      wps_[i](1) = waypoints_[i][1];
-      wps_[i](2) = waypoints_[i][2];
+    // wps_.resize(waypoint_num_);
+    // for (int i = 0; i < waypoint_num_; i++)
+    // {
+    //   wps_[i](0) = waypoints_[i][0];
+    //   wps_[i](1) = waypoints_[i][1];
+    //   wps_[i](2) = waypoints_[i][2];
 
-      // end_pt_ = wps_.back();
-    }
+    //   // end_pt_ = wps_.back();
+    // }
 
     // bool success = planner_manager_->planGlobalTrajWaypoints(
     //   odom_pos_, Eigen::Vector3d::Zero(), Eigen::Vector3d::Zero(),
@@ -120,39 +123,6 @@ namespace ego_planner
     // plan first global waypoint
     wp_id_ = 0;
     planNextWaypoint(wps_[wp_id_]);
-
-    // if (success)
-    // {
-
-    //   /*** display ***/
-    //   constexpr double step_size_t = 0.1;
-    //   int i_end = floor(planner_manager_->global_data_.global_duration_ / step_size_t);
-    //   std::vector<Eigen::Vector3d> gloabl_traj(i_end);
-    //   for (int i = 0; i < i_end; i++)
-    //   {
-    //     gloabl_traj[i] = planner_manager_->global_data_.global_traj_.evaluate(i * step_size_t);
-    //   }
-
-    //   end_vel_.setZero();
-    //   have_target_ = true;
-    //   have_new_target_ = true;
-
-    //   /*** FSM ***/
-    //   // if (exec_state_ == WAIT_TARGET)
-    //   //changeFSMExecState(GEN_NEW_TRAJ, "TRIG");
-    //   // trigger_ = true;
-    //   // else if (exec_state_ == EXEC_TRAJ)
-    //   //   changeFSMExecState(REPLAN_TRAJ, "TRIG");
-
-    //   // visualization_->displayGoalPoint(end_pt_, Eigen::Vector4d(1, 0, 0, 1), 0.3, 0);
-    //   ros::Duration(0.001).sleep();
-    //   visualization_->displayGlobalPathList(gloabl_traj, 0.1, 0);
-    //   ros::Duration(0.001).sleep();
-    // }
-    // else
-    // {
-    //   ROS_ERROR("Unable to generate global trajectory!");
-    // }
   }
 
   void EGOReplanFSM::planNextWaypoint(const Eigen::Vector3d next_wp)
@@ -203,9 +173,43 @@ namespace ego_planner
 
   void EGOReplanFSM::triggerCallback(const geometry_msgs::PoseStampedPtr &msg)
   {
-    have_trigger_ = true;
+    take_off_finished = true;
     cout << "Triggered!" << endl;
     init_pt_ = odom_pos_;
+  }
+
+  void EGOReplanFSM::WpsCallback(const nav_msgs::PathPtr& msg) {
+    auto posi = msg->poses;
+    waypoint_num_ = int(posi.size());
+    wps_.clear();
+    wps_.resize(waypoint_num_);
+    for (size_t i = 0; i < (size_t)waypoint_num_; i++) {
+      wps_[i][0] = posi[i].pose.position.x;
+      wps_[i][1] = posi[i].pose.position.y;
+      wps_[i][2] = posi[i].pose.position.z;
+
+      cout << "wapoint" << i + 1 << ": " << "(" << wps_[i][0] << "," <<wps_[i][1] << "," << wps_[i][2] << ")" << endl; 
+    }
+    
+    ROS_INFO("Wait for 1 second.");
+    int count = 0;
+    while (ros::ok() && count++ < 1000)
+    {
+      ros::spinOnce();
+      ros::Duration(0.001).sleep();
+    }
+
+
+    if (take_off_finished) have_trigger_ = true;
+    ROS_WARN("Waiting for trigger from console");
+
+    while (ros::ok() && (!have_odom_ || !have_trigger_))
+    {
+      ros::spinOnce();
+      ros::Duration(0.001).sleep();
+    }
+    
+    readGivenWps();
   }
 
   void EGOReplanFSM::waypointCallback(const geometry_msgs::PoseStampedPtr &msg)
@@ -557,6 +561,7 @@ namespace ego_planner
           (wp_id_ < waypoint_num_ - 1) &&
           (end_pt_ - pos).norm() < no_replan_thresh_)
       {
+        //在这里进行阶段轨迹生成
         wp_id_++;
         planNextWaypoint(wps_[wp_id_]);
       }

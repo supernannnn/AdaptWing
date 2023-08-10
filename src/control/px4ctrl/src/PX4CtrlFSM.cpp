@@ -326,7 +326,16 @@ void PX4CtrlFSM::process()
 	}
 	else
 	{
+		// if (console_state.msg.state != console::ConsoleState::WAIT_TAKE_OFF_FINISHED){
+		// 	publish_attitude_ctrl(u, now_time);
+		// }
 		publish_attitude_ctrl(u, now_time);
+
+		// if (console_state.msg.state == console::ConsoleState::SEARCHING_PILLAR || console_state.msg.state == console::ConsoleState::PASSING_CIRCLES) {
+		// if (console_state.msg.state == console::ConsoleState::WAIT_TAKE_OFF_FINISHED) {
+		// 	publish_vel_ctrl(vel_cmd_data.msg, now_time);
+		// }
+		
 	}
 
 	// STEP5: Detect if the drone has landed
@@ -555,6 +564,16 @@ void PX4CtrlFSM::publish_bodyrate_ctrl(const Controller_Output_t &u, const ros::
 	ctrl_FCU_pub.publish(msg);
 }
 
+
+/*机体线速度控制*/
+void PX4CtrlFSM::publish_vel_ctrl(geometry_msgs::TwistStamped& vel_cmd , const ros::Time &stamp){
+	geometry_msgs::TwistStamped msg = vel_cmd;
+	msg.header.stamp = stamp;
+	msg.header.frame_id = std::string("FCU");
+	ctrl_vel_pub.publish(msg);
+}
+
+/*姿态控制*/
 void PX4CtrlFSM::publish_attitude_ctrl(const Controller_Output_t &u, const ros::Time &stamp)
 {
 	mavros_msgs::AttitudeTarget msg;

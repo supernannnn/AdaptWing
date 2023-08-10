@@ -218,6 +218,8 @@ void ExtendedState_Data_t::feed(mavros_msgs::ExtendedStateConstPtr pMsg)
     current_extended_state = *pMsg;
 }
 
+
+
 Command_Data_t::Command_Data_t()
 {
     rcv_stamp = ros::Time(0);
@@ -250,6 +252,28 @@ void Command_Data_t::feed(quadrotor_msgs::PositionCommandConstPtr pMsg)
     yaw = uav_utils::normalize_angle(msg.yaw);
     yaw_rate = msg.yaw_dot;
 }
+
+//线速度指令结构体定义
+Vel_Command_Data_t::Vel_Command_Data_t() {
+    rcv_stamp = ros::Time(0);
+}
+
+void Vel_Command_Data_t::feed(geometry_msgs::TwistStampedConstPtr pMsg) {
+    msg = *pMsg;
+    rcv_stamp = ros::Time::now();
+}
+
+//控制台状态结构体定义
+Console_State_t::Console_State_t() {
+    rcv_stamp = ros::Time(0);
+}
+
+void Console_State_t::feed(console::ConsoleStateConstPtr pMsg) {
+    msg = *pMsg;
+    rcv_stamp = ros::Time::now();
+}
+
+
 
 Battery_Data_t::Battery_Data_t()
 {
