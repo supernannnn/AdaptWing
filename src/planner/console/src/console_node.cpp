@@ -17,7 +17,9 @@ void CONSOLE::init(ros::NodeHandle& nh){
     nh.param("vis/vis_traj_width", _vis_traj_width, 0.15);
 
     _poly_num1D = 2 * _dev_order;
+    nh.param("time_forward", time_forward_, -1.0);
 
+    //第一关柱子坐标
     nh.param("pillar1_x", pillar1(0), 0.0);
     nh.param("pillar1_y", pillar1(1), 0.0);
     nh.param("pillar1_z", pillar1(2), 0.0);
@@ -34,11 +36,39 @@ void CONSOLE::init(ros::NodeHandle& nh){
     nh.param("pillar4_y", pillar4(1), 0.0);
     nh.param("pillar4_z", pillar4(2), 0.0);
 
+
+    //第二关隧道起终点坐标
+    nh.param("tunnel_start_x", tunnel_start(0), 0.0);
+    nh.param("tunnel_start_y", tunnel_start(1), 0.0);
+    nh.param("tunnel_start_z", tunnel_start(2), 0.0);
+
+    nh.param("tunnel_end_x", tunnel_end(0), 0.0);
+    nh.param("tunnel_end_y", tunnel_end(1), 0.0);
+    nh.param("tunnel_end_z", tunnel_end(2), 0.0);
+
+    //第三关迷宫路标点
+    nh.param("maze_wp1_x", maze_wp1(0), 0.0);
+    nh.param("maze_wp1_y", maze_wp1(1), 0.0);
+    nh.param("maze_wp1_z", maze_wp1(2), 0.0);
+
+    nh.param("maze_wp2_x", maze_wp2(0), 0.0);
+    nh.param("maze_wp2_y", maze_wp2(1), 0.0);
+    nh.param("maze_wp2_z", maze_wp2(2), 0.0);
+
+    //圆预设终点
+    nh.param("circle_terminal_x", circle_terminal(0), 0.0);
+    nh.param("circle_terminal_y", circle_terminal(1), 0.0);
+    nh.param("circle_terminal_z", circle_terminal(2), 0.0);
+
+    nh.param("circle_D", circle_D, 1.0);
+
+    //二维码终点预设坐标
     nh.param("terminal_apriltag_x", terminal_apriltag(0), 0.0);
     nh.param("terminal_apriltag_y", terminal_apriltag(1), 0.0);
     nh.param("terminal_apriltag_z", terminal_apriltag(2), 0.0);
 
-    nh.param("time_forward", time_forward_, -1.0);
+
+    
 
     circle_dec.reset(new CIRCLE());
 
@@ -66,44 +96,156 @@ void CONSOLE::init(ros::NodeHandle& nh){
 }
 
 
+
+void onTrackbarChange(int value, void* userData) {
+    // 在这里可以处理滑动条值的变化，例如对图像进行处理
+}
+
+
+
 void CONSOLE::ColorImageCallback(const sensor_msgs::Image::ConstPtr& msg) {
-    if (state == STATE::PASSING_CIRCLES || 1) {
+
+    // static bool flls = true;
+    // if (flls) {
+    //     namedWindow("Image Window", WINDOW_NORMAL);
+    //     int sliderValue = 0;  // 初始值
+    //     createTrackbar("Slider", "Image Window", &sliderValue, 1000, onTrackbarChange);
+    //     flls = false;
+    // }
+
+
+    if (state == STATE::PASSING_CIRCLES && !passed_circle_flag) {
+        static int circle_miss_cnt = 0;
+        
         circle_pos = circle_dec->DetectionCallback(msg);
-        if (circle_pos.first) {
-            cout << "u: " << "(" << circle_pos.second.x << "," << circle_pos.second.y << ")" << endl;;
+        if (circle_pos.first ) {
+            circle_miss_cnt = 0;
+            have_circle = true;
+
+            have_circle_cnt++;
+            // cout << "pos: " << "(" << circle_pos.second.x << "," << circle_pos.second.y << ")" << endl;
+            cout << "r: " << circle_pos.second.z << endl;
+
+            // // 获取滑条的值
+            // int currentValue = getTrackbarPos("Slider", "Image Window");
+
+            // cout << "curccc: " << currentValue << endl; 
+            circle_dis = (314.4444444444444 * circle_D) / circle_pos.second.z;
+
+            cout << "the real depth: " << circle_dis << endl;
+
+        }else {
+            static bool start_miss = false;
+
+            //加这个标志位是为了保证只有检测到30帧圆之后才会进入丢失的判断
+            if (have_circle_cnt >= 30) start_miss = true;
+
+            //加这个标志位是为了保证只有在检测到30帧圆之后持续漏检才认为圆已经很近了
+            if (start_miss){
+                circle_miss_cnt++;
+            } 
+
+            if (circle_miss_cnt == 30)
+            {
+                passed_circle_flag = true;
+                ROS_WARN("get done");
+            }
+
+            have_circle = false;
         }
     }
 }
 
-vector<geometry_msgs::Point> CONSOLE::Ego_planner_firstTaskWps_genaration() {
-    vector<geometry_msgs::Point> firstTaskWps;
+
+//机体系速度控制
+void CONSOLE::BodyMoveControlParse(Eigen::Vector3d& ori) {
+
+    vel_state = MOVESIDE;
+
+    //机体转世界坐标系
+    Eigen::Vector3d world = odom_q * ori;
+
+    //world(1) = -world(1);
+    
+    // cout << "world(0)" << world(0) << endl;
+    // cout << "world(1)" << world(1) << endl;
+
+    posiCmd.header.stamp = ros::Time::now();
+    posiCmd.position.x = odom_pos(0) + world(0);
+    posiCmd.position.y = odom_pos(1) + world(1);
+    posiCmd.position.z = 1.3;
+
+    posiCmd.velocity.x = world(0) * 0.5;
+    posiCmd.velocity.y = world(1) * 0.5;
+    posiCmd.velocity.z = 0;
+
+    posiCmd.yaw = last_yaw_;
+    posiCmd.yaw_dot = 0;
+    last_yaw_ = posiCmd.yaw;
+    controlCmd_pub.publish(posiCmd);
+}
+
+
+// //机体系速度控制
+// void CONSOLE::BodyForwardControlParse(Eigen::Vector3d& ori, double y) {
+
+//     vel_state = FORWARD;
+
+//     Eigen::Vector3d world = odom_q.inverse() * ori;
+
+//     posiCmd.header.stamp = ros::Time::now();
+//     posiCmd.position.x = odom_pos(0) + world(0);
+//     posiCmd.position.y = y + world(1);
+//     posiCmd.position.z = 1.3;
+
+//     posiCmd.velocity.x = world(0);
+//     posiCmd.velocity.y = world(1);
+//     posiCmd.velocity.z = 0;
+
+//     posiCmd.yaw = last_yaw_;
+//     posiCmd.yaw_dot = 0;
+//     last_yaw_ = posiCmd.yaw;
+//     controlCmd_pub.publish(posiCmd);
+// }
+
+
+
+
+vector<geometry_msgs::Point> CONSOLE::Ego_planner_mazeWps_genaration() {
+    vector<geometry_msgs::Point> mazeWps;
     geometry_msgs::Point tmp;
-    tmp.x = pillar1(0); tmp.y = pillar1(1) + 1.4; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = pillar1(0); tmp.y = pillar1(1) + 1.4; tmp.z = 1;
+    // firstTaskWps.push_back(tmp);
 
-    tmp.x = (pillar1(0) + pillar2(0)) / 2; tmp.y = (pillar1(1) + pillar2(1)) / 2; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = (pillar1(0) + pillar2(0)) / 2; tmp.y = (pillar1(1) + pillar2(1)) / 2; tmp.z = 1;
+    // firstTaskWps.push_back(tmp);
 
-    tmp.x = pillar2(0); tmp.y = pillar2(1) - 1.8; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = pillar2(0); tmp.y = pillar2(1) - 1.8; tmp.z = 1;
+    // firstTaskWps.push_back(tmp);
 
-    tmp.x = (pillar2(0) + pillar3(0)) / 2; tmp.y = (pillar2(1) + pillar3(1)) / 2; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = (pillar2(0) + pillar3(0)) / 2; tmp.y = (pillar2(1) + pillar3(1)) / 2; tmp.z = 1;
+    // firstTaskWps.push_back(tmp); 
 
-    tmp.x = pillar3(0); tmp.y = pillar3(1) + 1.4; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = pillar3(0); tmp.y = pillar3(1) + 1.4; tmp.z = 1;
+    // firstTaskWps.push_back(tmp);
 
-    tmp.x = (pillar3(0) + pillar4(0)) / 2; tmp.y = (pillar3(1) + pillar4(1)) / 2; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = (pillar3(0) + pillar4(0)) / 2; tmp.y = (pillar3(1) + pillar4(1)) / 2; tmp.z = 1;
+    // firstTaskWps.push_back(tmp);
 
-    tmp.x = pillar4(0); tmp.y = pillar4(1) - 1.8; tmp.z = 1;
-    firstTaskWps.push_back(tmp);
+    // tmp.x = pillar4(0); tmp.y = pillar4(1) - 1.8; tmp.z = 1;
+    // firstTaskWps.push_back(tmp);
 
-    tmp.x = pillar4(0) + 1; tmp.y = pillar4(1) + 1.0; tmp.z = 1;
-    pillars_terminal_position = {pillar4(0) + 1, pillar4(1) + 1.0, 1};
-    firstTaskWps.push_back(tmp);   
+    // tmp.x = pillar4(0) + 1; tmp.y = pillar4(1) + 1.0; tmp.z = 1;
+    // pillars_terminal_position = {pillar4(0) + 1, pillar4(1) + 1.0, 1};
+    // firstTaskWps.push_back(tmp);   
 
-    return firstTaskWps;
+    tmp.x = maze_wp1(0); tmp.y = maze_wp1(1); tmp.z = maze_wp1(2);
+    mazeWps.push_back(tmp);
+
+    tmp.x = maze_wp2(0); tmp.y = maze_wp2(1); tmp.z = maze_wp2(2);
+    mazeWps.push_back(tmp);    
+
+    return mazeWps;
 }
 
 void CONSOLE::ApriltagCallback(const apriltag_ros::AprilTagDetectionArrayPtr& msg) {
@@ -152,6 +294,11 @@ void CONSOLE::OdomCallback(const nav_msgs::OdometryConstPtr msg){
     odom_pos(0) = msg->pose.pose.position.x;
     odom_pos(1) = msg->pose.pose.position.y;
     odom_pos(2) = msg->pose.pose.position.z;
+
+    odom_vel(0) = msg->twist.twist.linear.x;
+    odom_vel(1) = msg->twist.twist.linear.y;
+    odom_vel(2) = msg->twist.twist.linear.z;
+
 
     odom_q.x() = msg->pose.pose.orientation.x;
     odom_q.y() = msg->pose.pose.orientation.y;

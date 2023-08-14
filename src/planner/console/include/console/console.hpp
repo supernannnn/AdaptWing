@@ -59,6 +59,13 @@ using namespace std;
 using namespace Eigen;
 
 
+/*线速度控制状态*/
+enum VEL_STATE {
+    FORWARD = 0,   //前进
+    MOVESIDE        //左右
+};
+
+
 
 /*任务状态*/
 enum STATE{
@@ -136,8 +143,17 @@ private:
     Eigen::Vector3d pillar3    = Vector3d::Zero();
     Eigen::Vector3d pillar4    = Vector3d::Zero();
 
-
     //第二关隧道起点和终点
+    Eigen::Vector3d tunnel_start    = Vector3d::Zero();
+    Eigen::Vector3d tunnel_end      = Vector3d::Zero();
+
+    //第三关迷宫路标点
+    Eigen::Vector3d maze_wp1    = Vector3d::Zero();
+    Eigen::Vector3d maze_wp2    = Vector3d::Zero();
+
+    //第四关圆预设终点
+
+    Eigen::Vector3d circle_terminal = Vector3d::Zero();
 
 
     //终点预设坐标
@@ -152,11 +168,23 @@ private:
     /*状态机当前状态*/
     int state;
 
+    int vel_state = 2;
+
     //从起飞点到第一个预设点的轨迹
     MiniSnapTraj Traj_start;
 
     //绕柱子轨迹
     MiniSnapTraj rotate_pillars_traj;
+
+    //绕完柱子飞向隧道起点轨迹
+    MiniSnapTraj fly2tunnel_start_traj;
+    bool fly2tunnel_finished = false;
+
+    //隧道轨迹
+    MiniSnapTraj tunnel_traj;
+    bool tunnel_finished = false;
+
+
 
     //飞向预设终点轨迹
     MiniSnapTraj fly2apriltag_traj;
@@ -164,10 +192,11 @@ private:
     //飞向检测到的二维码
     MiniSnapTraj fly2land_traj;
 
+
+
     //圆检测接口
     CIRCLE::Ptr circle_dec;
-
-    std::pair<bool, cv::Point2d> circle_pos;
+    std::pair<bool, cv::Point3d> circle_pos;
 
 
 
@@ -189,7 +218,7 @@ private:
     
 
     Eigen::Quaterniond odom_q;
-    Eigen::Vector3d odom_pos, pillars_terminal_position, apriltag_pos;
+    Eigen::Vector3d odom_pos, odom_vel, pillars_terminal_position, apriltag_pos;
 
     bool has_odom;
     bool rotate_pillars_finished, start_trajectory_finished, eight_follow_finished;
@@ -215,6 +244,15 @@ private:
 
     cv::Mat depth_image;
 
+    bool have_circle = false;
+    bool passed_circle_flag = false;
+
+    double circle_dis = 0.0;
+
+    double circle_D = 0.0;
+
+    int have_circle_cnt = 0;
+
     void CmdForwardCallback(const quadrotor_msgs::PositionCommandPtr msg);
 
     void ApriltagCallback(const apriltag_ros::AprilTagDetectionArrayPtr& msg);
@@ -230,10 +268,17 @@ private:
     std::pair<bool, double> findPillar();
     inline double Distance_of_waypoints(Eigen::Vector3d& Point1, Eigen::Vector3d& Point2);
 
-    /*ego-planner：第一关waypoints生成*/
-    vector<geometry_msgs::Point> Ego_planner_firstTaskWps_genaration();
+    /*ego-planner：迷宫路标点生成*/
+    vector<geometry_msgs::Point> Ego_planner_mazeWps_genaration();
 
     void ColorImageCallback(const sensor_msgs::Image::ConstPtr& msg);
+
+    //机体系左右移动函数
+    void BodyMoveControlParse(Eigen::Vector3d& ori);
+
+    //机体系前进函数
+    //void BodyForwardControlParse(Eigen::Vector3d& ori, double y);
+
 
 
 public:

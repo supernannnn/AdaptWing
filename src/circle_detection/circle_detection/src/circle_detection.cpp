@@ -1,12 +1,11 @@
 #include <circle_detection.h>
 
-std::pair<bool, cv::Point2d> CIRCLE::DetectionCallback(const sensor_msgs::Image::ConstPtr& msg) {
+std::pair<bool, cv::Point3d> CIRCLE::DetectionCallback(const sensor_msgs::Image::ConstPtr& msg) {
     
     cv_bridge::CvImagePtr col;
     col = cv_bridge::toCvCopy(msg,sensor_msgs::image_encodings::TYPE_8UC3);
     color_pic = col->image;
     cv::cvtColor(color_pic,color_pic,cv::COLOR_RGB2BGR);
-    /**EDCIRCLES Circle Segment Detection**/
 
     //***************************** EDCIRCLES Circle Segment Detection *****************************
     // Detection of circles directly from the input image
@@ -30,6 +29,7 @@ std::pair<bool, cv::Point2d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
                 hh.distance = dis;//a b之间的欧氏距离
                 hh.i = int(i);
                 hh.j = int(j);
+                hh.radius = (circles[i].r + circles[j].r) / 2;
                 ED_lib_dis.push_back(hh);//push_back() 是 C++ 中的一个向量成员函数，它用于将元素添加到向量的末尾。当调用 push_back() 时，它会将传入的元素添加到向量的末尾，并将向量的大小增加一个单位。也就是说，ED_lib_dis 中原本有 n 个元素，调用 push_back(hh) 后，ED_lib_dis 将会有 n+1 个元素，最后一个元素就是 hh。
             }
         }
@@ -40,8 +40,6 @@ std::pair<bool, cv::Point2d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
         if(ED_lib_dis[0].distance < 30){
             
             ring_width=abs(circles[ED_lib_dis[0].i].r- circles[ED_lib_dis[0].j].r);
-            cv::circle(color_pic,circles[ED_lib_dis[0].i].center,circles[ED_lib_dis[0].i].r,cv::Scalar(0,255,0) ,ring_width);//画圆
-            cv::circle(color_pic,circles[ED_lib_dis[0].i].center,2,cv::Scalar(0,255,0) ,2);
             des_cen = circles[ED_lib_dis[0].i].center;//
             des_r = circles[ED_lib_dis[0].i].r;//                                 
             have_circle_ = true;
@@ -64,6 +62,7 @@ std::pair<bool, cv::Point2d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
                 hh.distance = dis;//a b之间的欧氏距离
                 hh.i = int(i);
                 hh.j = int(j);
+                hh.radius = (Ellipse[i].axes.height + Ellipse[j].axes.height) / 2;
                 ED_lib_disE.push_back(hh);//push_back() 是 C++ 中的一个向量成员函数，它用于将元素添加到向量的末尾。当调用 push_back() 时，它会将传入的元素添加到向量的末尾，并将向量的大小增加一个单位。也就是说，ED_lib_disE 中原本有 n 个元素，调用 push_back(hh) 后，ED_lib_disE 将会有 n+1 个元素，最后一个元素就是 hh。
             }
         }
@@ -74,10 +73,8 @@ std::pair<bool, cv::Point2d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
         if(ED_lib_disE[0].distance < 30){
             
             if (Ellipse[ED_lib_disE[0].i].axes.height >= 0 && Ellipse[ED_lib_disE[0].i].axes.width >= 0 ) {
-                cv::ellipse( color_pic, Ellipse[ED_lib_disE[0].i].center, Ellipse[ED_lib_disE[0].i].axes, Ellipse[ED_lib_disE[0].i].theta, 0, 360, cv::Scalar(0, 0, 255), 2);
-                cv::ellipse( color_pic, Ellipse[ED_lib_disE[0].j].center, Ellipse[ED_lib_disE[0].j].axes, Ellipse[ED_lib_disE[0].j].theta, 0, 360, cv::Scalar(0, 0, 255), 2);
-                cv::circle(color_pic,Ellipse[ED_lib_disE[0].i].center,2,cv::Scalar(0,0,255) ,2);
                 decE_cen=Ellipse[ED_lib_disE[0].i].center;//将其中一个椭圆的圆心赋给decE_cen
+                decE_r = Ellipse[ED_lib_disE[0].i].axes.height;
 
             }              
             have_Ellipse = true;
@@ -86,16 +83,20 @@ std::pair<bool, cv::Point2d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
                 
         have_Ellipse = false;
     }
-    std::pair<bool, cv::Point2d> res;
+    std::pair<bool, cv::Point3d> res;
 
-    if (have_circle_) {
+    if (have_circle_ && des_r > 70 && des_r < 300) {
         res.first = true;
-        res.second = cv::Point2d(des_cen.x, des_cen.y);
-    }else if (have_Ellipse) {
+        res.second = cv::Point3d(des_cen.x, des_cen.y, des_r);
+    }else if (have_Ellipse && decE_r > 70 && decE_r < 300) {
         res.first = true;
-        res.second = cv::Point2d(decE_cen.x, decE_cen.y);
+        res.second = cv::Point3d(decE_cen.x, decE_cen.y, decE_r);
     }else {
         res.first = false;
+    }
+    if (res.first) {
+        cv::circle(color_pic,cv::Point2d(res.second.x, res.second.y),res.second.z,cv::Scalar(0,255,0) ,ring_width);
+        cv::circle(color_pic,cv::Point2d(res.second.x, res.second.y),2,cv::Scalar(0,255,0) ,2);
     }
 
     ED_lib_dis.clear();
@@ -134,7 +135,7 @@ inline double CIRCLE::distance_cv_points(const cv::Point &a , const cv::Point &b
 }
  inline bool CIRCLE::cv_point_cmp(const distance_i_j &a , const distance_i_j &b){
     
-    return a.distance < b.distance;
+    return a.radius > b.radius && a.distance < b.distance;
 }
 
 

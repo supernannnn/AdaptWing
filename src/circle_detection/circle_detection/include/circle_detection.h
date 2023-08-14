@@ -52,6 +52,7 @@ struct distance_i_j
     double distance;
     int i;
     int j;
+    double radius;
 };
 
 
@@ -66,7 +67,7 @@ public:
     
     void init(ros::NodeHandle& nh);
     typedef shared_ptr<CIRCLE> Ptr;
-    std::pair<bool, cv::Point2d> DetectionCallback(const sensor_msgs::Image::ConstPtr& msg);
+    std::pair<bool, cv::Point3d> DetectionCallback(const sensor_msgs::Image::ConstPtr& msg);
         
 private:
     cv::Mat color_pic;
@@ -83,6 +84,9 @@ private:
     int des_r;
     cv::Size axes;
     double theta;
+
+    //椭圆半长轴
+    double decE_r;
 
     vector<distance_i_j> ED_lib_dis;
     vector<distance_i_j> ED_lib_disE;

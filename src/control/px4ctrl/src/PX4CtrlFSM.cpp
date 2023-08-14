@@ -326,16 +326,7 @@ void PX4CtrlFSM::process()
 	}
 	else
 	{
-		// if (console_state.msg.state != console::ConsoleState::WAIT_TAKE_OFF_FINISHED){
-		// 	publish_attitude_ctrl(u, now_time);
-		// }
 		publish_attitude_ctrl(u, now_time);
-
-		// if (console_state.msg.state == console::ConsoleState::SEARCHING_PILLAR || console_state.msg.state == console::ConsoleState::PASSING_CIRCLES) {
-		// if (console_state.msg.state == console::ConsoleState::WAIT_TAKE_OFF_FINISHED) {
-		// 	publish_vel_ctrl(vel_cmd_data.msg, now_time);
-		// }
-		
 	}
 
 	// STEP5: Detect if the drone has landed

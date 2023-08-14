@@ -1,10 +1,10 @@
 <launch>
 
   <node pkg="console" type="console_node" name="console_node" output="screen" required = "true" >
-    <remap from="~odom"      to="/fusion/odom"/>
-    <remap from="~depth"      to="/camera/depth/image_rect_raw"/>
-    <remap from="~planner_cmd"      to="/position_cmd"/>
-    <remap from="~image"      to="/camera/color/image_raw"/>
+    <remap from="~odom"         to="/fusion/odom"/>
+    <remap from="~depth"        to="/camera/depth/image_rect_raw"/>
+    <remap from="~planner_cmd"  to="/position_cmd"/>
+    <remap from="~image"        to="/camera/color/image_raw"/>
 
     <!-- 规划器参数 -->
     <param name="planning/vel"       value="0.3"  />
@@ -37,22 +37,39 @@
 
 
     <!-- 第二关隧道起点、终点坐标 -->
-    <param name="tunnel_start_x" value="3.0" type="double" />
-    <param name="tunnel_start_y" value="0.0" type="double" /> 
+    <param name="tunnel_start_x" value="6.0" type="double" />
+    <param name="tunnel_start_y" value="1.0" type="double" /> 
     <param name="tunnel_start_z" value="1.5" type="double" />
 
-    <param name="tunnel_end_x" value="4.0" type="double" />
-    <param name="tunnel_end_y" value="0.0" type="double" />
+    <param name="tunnel_end_x" value="6.0" type="double" />
+    <param name="tunnel_end_y" value="1.0" type="double" />
     <param name="tunnel_end_z" value="1.5" type="double" />
 
 
+    <!-- 第三关迷宫路标点 -->
+    <param name="maze_wp1_x" value="6.0" type="double" />
+    <param name="maze_wp1_y" value="1.0" type="double" /> 
+    <param name="maze_wp1_z" value="1.5" type="double" /> 
 
-    <!-- 第二关隧道起点、终点坐标 -->
+    <param name="maze_wp2_x" value="6.0" type="double" />
+    <param name="maze_wp2_y" value="1.0" type="double" /> 
+    <param name="maze_wp2_z" value="1.5" type="double" />    
+
+    <!-- 第四关圆终点大致位置 -->
+    <param name="circle_terminal_x" value="6.0" type="double" />
+    <param name="circle_terminal_y" value="1.0" type="double" /> 
+    <param name="circle_terminal_y" value="1.5" type="double" />  
+
+
+    <!-- 圆环直径 -->   
+    <param name="circle_D" value="0.9" type="double" />  
+
+
+
+    <!-- 终点大致位置 -->
     <param name="terminal_apriltag_x" value="6.0" type="double" />
     <param name="terminal_apriltag_y" value="1.0" type="double" /> 
     <param name="terminal_apriltag_z" value="1.0" type="double" />
-
-
 
 
 
