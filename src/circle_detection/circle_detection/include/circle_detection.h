@@ -91,9 +91,12 @@ private:
     vector<distance_i_j> ED_lib_dis;
     vector<distance_i_j> ED_lib_disE;
 
+
+
     
     inline double distance_cv_points(const cv::Point& a , const cv::Point& b);
     inline static bool cv_point_cmp(const distance_i_j& a , const distance_i_j& b);
+    inline static bool radius_cmp(const distance_i_j &a , const distance_i_j &b);
 
 };
 

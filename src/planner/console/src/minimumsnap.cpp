@@ -252,12 +252,30 @@ Eigen::VectorXd CONSOLE::timeAllocation(Eigen::MatrixXd& Path){
     // The time allocation is many relative timelines but not one common timeline
     for(int i = 0; i < time.rows(); i++)
     {
-        double distance = (Path.row(i+1) - Path.row(i)).norm();    // or .lpNorm<2>()
-        double x1 = _Vel * _Vel / (2 * _Acc); 
-        double x2 = distance - 2 * x1;
-        double t1 = _Vel / _Acc;
-        double t2 = x2 / _Vel;
-        time(i) = 2 * t1 + t2;
+
+        if (state == SEARCHING_MAZE) {
+            double distance = (Path.row(i+1) - Path.row(i)).norm();    // or .lpNorm<2>()
+            double x1 = 2.0 * 2.0 / (2 * _Acc); 
+            double x2 = distance - 2 * x1;
+            double t1 = 2.0 / _Acc;
+            double t2 = x2 / 2.0;
+            time(i) = 2 * t1 + t2;            
+        }else if (state == SEARCHING_APRILTAG){
+            double distance = (Path.row(i+1) - Path.row(i)).norm();    // or .lpNorm<2>()
+            double x1 = 1.5 * 1.5 / (2 * _Acc); 
+            double x2 = distance - 2 * x1;
+            double t1 = 1.5 / _Acc;
+            double t2 = x2 / 1.5;
+            time(i) = 2 * t1 + t2;  
+        }else {
+            double distance = (Path.row(i+1) - Path.row(i)).norm();    // or .lpNorm<2>()
+            double x1 = _Vel * _Vel / (2 * _Acc); 
+            double x2 = distance - 2 * x1;
+            double t1 = _Vel / _Acc;
+            double t2 = x2 / _Vel;
+            time(i) = 2 * t1 + t2;
+        }
+
     }
     return time;
 }

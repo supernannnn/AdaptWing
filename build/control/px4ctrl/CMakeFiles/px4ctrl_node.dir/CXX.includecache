@@ -7,20 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/skbt/AdaptWing/devel/include/console/ConsoleState.h
-string
--
-vector
--
-memory
--
-ros/types.h
--
-ros/serialization.h
--
-ros/builtin_message_traits.h
--
-ros/message_operations.h
--
 
 /home/skbt/AdaptWing/devel/include/quadrotor_msgs/PositionCommand.h
 string
@@ -132,6 +118,10 @@ input.h
 Eigen/Dense
 -
 
+/home/skbt/AdaptWing/src/control/px4ctrl/src/input.cpp
+input.h
+/home/skbt/AdaptWing/src/control/px4ctrl/src/input.h
+
 /home/skbt/AdaptWing/src/control/px4ctrl/src/input.h
 ros/ros.h
 -
@@ -158,6 +148,14 @@ uav_utils/utils.h
 PX4CtrlParam.h
 /home/skbt/AdaptWing/src/control/px4ctrl/src/PX4CtrlParam.h
 console/ConsoleState.h
+-
+
+/home/skbt/AdaptWing/src/control/px4ctrl/src/px4ctrl_node.cpp
+ros/ros.h
+-
+PX4CtrlFSM.h
+/home/skbt/AdaptWing/src/control/px4ctrl/src/PX4CtrlFSM.h
+signal.h
 -
 
 /home/skbt/AdaptWing/src/planner/Utils/utils/uav_utils/include/uav_utils/converters.h

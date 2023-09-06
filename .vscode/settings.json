@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "/home/skbt/AdaptWing/src/planner/MinimumSnap/trajectory_generator",
+    "cmake.sourceDirectory": "/home/skbt/AdaptWing/src/circle_detection/EDcircles",
     "python.autoComplete.extraPaths": [
         "/home/skbt/AdaptWing/devel/lib/python3/dist-packages",
         "/opt/ros/noetic/lib/python3/dist-packages"

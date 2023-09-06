@@ -53,19 +53,14 @@
 
 #include <circle_detection.h>
 
-
-
 using namespace std;
 using namespace Eigen;
-
 
 /*线速度控制状态*/
 enum VEL_STATE {
     FORWARD = 0,   //前进
     MOVESIDE        //左右
 };
-
-
 
 /*任务状态*/
 enum STATE{
@@ -74,6 +69,7 @@ enum STATE{
     FLY_TO_STRAT,                   //飞向起点
     SEARCHING_PILLAR,               //搜寻第一根柱子
     ROTATE_PILLARS,                 //执行绕柱轨迹
+    FLY_TO_TUNNEL_STRAT,            //飞向隧道起点
     FLYING_VIA_TUNNEL,              //钻隧道
     SEARCHING_MAZE,                 //迷宫
     PASSING_CIRCLES,                //穿圆
@@ -107,7 +103,6 @@ struct MiniSnapTraj{
 
 class CONSOLE{
 private:
-
 
     /***********************************minimumsnap***********************************/
     double _vis_traj_width;
@@ -147,13 +142,16 @@ private:
     Eigen::Vector3d tunnel_start    = Vector3d::Zero();
     Eigen::Vector3d tunnel_end      = Vector3d::Zero();
 
+    double fly_altitude;
+
     //第三关迷宫路标点
     Eigen::Vector3d maze_wp1    = Vector3d::Zero();
     Eigen::Vector3d maze_wp2    = Vector3d::Zero();
+    Eigen::Vector3d maze_wp3    = Vector3d::Zero();
+    Eigen::Vector3d maze_wp4    = Vector3d::Zero();
 
-    //第四关圆预设终点
-
-    Eigen::Vector3d circle_terminal = Vector3d::Zero();
+    //第四关圆飞向终点的第一个路标点
+    Eigen::Vector3d cricle2apriltag    = Vector3d::Zero();
 
 
     //终点预设坐标
@@ -184,7 +182,24 @@ private:
     MiniSnapTraj tunnel_traj;
     bool tunnel_finished = false;
 
+    //分段飞向圆轨迹
+    MiniSnapTraj first_search_maze_traj;
+    bool first_search_maze_finished = false;
 
+    MiniSnapTraj second_search_maze_traj;
+    bool second_search_maze_finished = false;
+
+
+    //飞往圆心的轨迹
+    MiniSnapTraj toward_circle_traj;
+    bool toward_circle_finished = false;
+    int planning_circle_radius;
+    double planning_circle_altitude;
+
+
+    //第一条飞向终点轨迹
+    MiniSnapTraj cricle2apriltag_traj;
+    bool cricle2apriltag_finished = false;
 
     //飞向预设终点轨迹
     MiniSnapTraj fly2apriltag_traj;
@@ -192,12 +207,9 @@ private:
     //飞向检测到的二维码
     MiniSnapTraj fly2land_traj;
 
-
-
     //圆检测接口
     CIRCLE::Ptr circle_dec;
     std::pair<bool, cv::Point3d> circle_pos;
-
 
 
     vector<Eigen::Vector3d> traj, start_traj;
@@ -215,10 +227,12 @@ private:
     ros::Subscriber ego_planner_cmd_sub;
     ros::Subscriber apriltag_sub;
     ros::Subscriber color_sub;
+    ros::Subscriber vins_sub;
     
 
     Eigen::Quaterniond odom_q;
     Eigen::Vector3d odom_pos, odom_vel, pillars_terminal_position, apriltag_pos;
+    double vins_altitude;
 
     bool has_odom;
     bool rotate_pillars_finished, start_trajectory_finished, eight_follow_finished;
@@ -253,11 +267,24 @@ private:
 
     int have_circle_cnt = 0;
 
+    bool circle_adjust_yaw = false;
+
+    double searching_apriltag_altitude;
+
+    double fx, fy, cx, cy;
+    Eigen::Matrix3f camera_inner_matrix;
+    Eigen::Matrix3f cam2body_matrix;
+    Eigen::Matrix<float,3,1> point2D_h;
+    Eigen::Matrix<float,3,1> cam_pos;
+    Eigen::Vector3d circle_world_pos;
+
+
     void CmdForwardCallback(const quadrotor_msgs::PositionCommandPtr msg);
 
     void ApriltagCallback(const apriltag_ros::AprilTagDetectionArrayPtr& msg);
     void ControlCmdCallback(const ros::TimerEvent &e);
     void OdomCallback(const nav_msgs::OdometryConstPtr msg);
+    void VinsOdomCallback(const nav_msgs::OdometryConstPtr msg);
     void DepthCallback(const sensor_msgs::Image::ConstPtr& msg);
     /*TF树坐标变换关系*/
     void TransformerCallback(const ros::TimerEvent &e);
@@ -274,12 +301,15 @@ private:
     void ColorImageCallback(const sensor_msgs::Image::ConstPtr& msg);
 
     //机体系左右移动函数
-    void BodyMoveControlParse(Eigen::Vector3d& ori);
+    void BodyMoveControlParse(Eigen::Vector3d& ori, double height);
 
-    //机体系前进函数
-    //void BodyForwardControlParse(Eigen::Vector3d& ori, double y);
+    double LimitOutput(double val, double max_);
 
+    //圆调整函数
+    void BodyForwardControlParse(Eigen::Vector3d& ori);
 
+    //像素坐标系转相机坐标系
+    void UV2Camera(double dis);
 
 public:
     CONSOLE(/* argvs */){

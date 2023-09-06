@@ -35,15 +35,36 @@ std::pair<bool, cv::Point3d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
         }
         sort(ED_lib_dis.begin() , ED_lib_dis.end() ,  CIRCLE::cv_point_cmp);//这将使用 cv_point_cmp 函数作为排序的比较准则，按照 distance 的值从小到大对 ED_lib_dis 中的元素进行排序。
     
-    
-        /*画出ED_lib_dis中的同心圆*/
-        if(ED_lib_dis[0].distance < 30){
-            
+        // vector<distance_i_j> circle;
+        
+        // for (const auto& tmp : ED_lib_dis) {
+        //     if (tmp.distance < 30) {
+        //         circle.push_back(tmp);
+        //     }
+        // }
+
+        // if (!circle.empty()) {
+        //     sort(circle.begin(), circle.end(), radius_cmp);
+        //     ring_width=abs(circles[circle[0].i].r- circles[circle[0].j].r);
+        //     des_cen = circles[circle[0].i].center;//
+        //     des_r = circles[circle[0].i].r;//                                 
+        //     have_circle_ = true;
+        // }
+
+        if (ED_lib_dis[0].distance < 30) {
             ring_width=abs(circles[ED_lib_dis[0].i].r- circles[ED_lib_dis[0].j].r);
             des_cen = circles[ED_lib_dis[0].i].center;//
-            des_r = circles[ED_lib_dis[0].i].r;//                                 
-            have_circle_ = true;
+            des_r = circles[ED_lib_dis[0].i].r < circles[ED_lib_dis[0].j].r ? circles[ED_lib_dis[0].i].r : circles[ED_lib_dis[0].j].r;//                                 
+            have_circle_ = true;        
         }
+
+        
+
+        // /*画出ED_lib_dis中的同心圆*/
+        // if(ED_lib_dis[0].distance < 30){
+            
+
+        // }
     }else{
                 
         have_circle_ = false;
@@ -68,13 +89,28 @@ std::pair<bool, cv::Point3d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
         }
         sort(ED_lib_disE.begin() , ED_lib_disE.end() ,  CIRCLE::cv_point_cmp);//这将使用 cv_point_cmp 函数作为排序的比较准则，按照 distance 的值从小到大对 ED_lib_disE 中的元素进行排序。
     
-    
+        // vector<distance_i_j> ellipse;
+
+        // for (const auto& tmp : ED_lib_disE) {
+        //     if (tmp.distance < 30) {
+        //         ellipse.push_back(tmp);
+        //     }
+        // }
+
+        // if (!ellipse.empty()) {
+        //     sort(ellipse.begin(), ellipse.end(), radius_cmp);
+        //     decE_cen=Ellipse[ellipse[0].i].center;//将其中一个椭圆的圆心赋给decE_cen
+        //     decE_r = Ellipse[ellipse[0].i].axes.height;                                
+        //     have_Ellipse = true;
+        // }
+
+
         /*画出ED_lib_disE中的同心椭圆*/
         if(ED_lib_disE[0].distance < 30){
             
             if (Ellipse[ED_lib_disE[0].i].axes.height >= 0 && Ellipse[ED_lib_disE[0].i].axes.width >= 0 ) {
                 decE_cen=Ellipse[ED_lib_disE[0].i].center;//将其中一个椭圆的圆心赋给decE_cen
-                decE_r = Ellipse[ED_lib_disE[0].i].axes.height;
+                decE_r = Ellipse[ED_lib_disE[0].i].axes.height < Ellipse[ED_lib_disE[0].j].axes.height ? Ellipse[ED_lib_disE[0].i].axes.height : Ellipse[ED_lib_disE[0].j].axes.height;
 
             }              
             have_Ellipse = true;
@@ -85,10 +121,12 @@ std::pair<bool, cv::Point3d> CIRCLE::DetectionCallback(const sensor_msgs::Image:
     }
     std::pair<bool, cv::Point3d> res;
 
-    if (have_circle_ && des_r > 70 && des_r < 300) {
+    if (have_circle_ && des_r > 50 && des_r < 250) {
+    // if (have_circle_) {
         res.first = true;
         res.second = cv::Point3d(des_cen.x, des_cen.y, des_r);
-    }else if (have_Ellipse && decE_r > 70 && decE_r < 300) {
+    }else if (have_Ellipse && decE_r > 50 && decE_r < 250) {
+    // }else if (have_Ellipse) {
         res.first = true;
         res.second = cv::Point3d(decE_cen.x, decE_cen.y, decE_r);
     }else {
@@ -133,9 +171,17 @@ inline double CIRCLE::distance_cv_points(const cv::Point &a , const cv::Point &b
 
     return sqrt(pow(abs(a.x-b.x),2) + pow(abs(a.y-b.y),2));//a b两点之间的欧氏距离
 }
- inline bool CIRCLE::cv_point_cmp(const distance_i_j &a , const distance_i_j &b){
+
+
+inline bool CIRCLE::cv_point_cmp(const distance_i_j &a , const distance_i_j &b){
     
-    return a.radius > b.radius && a.distance < b.distance;
+    return a.distance < b.distance;
 }
+
+inline bool CIRCLE::radius_cmp(const distance_i_j &a , const distance_i_j &b){
+    
+    return a.radius > b.radius;
+}
+
 
 

@@ -7,8 +7,8 @@
     <remap from="~image"        to="/camera/color/image_raw"/>
 
     <!-- 规划器参数 -->
-    <param name="planning/vel"       value="0.3"  />
-    <param name="planning/acc"       value="1"  />
+    <param name="planning/vel"       value="0.4"  />
+    <param name="planning/acc"       value="6"  />
     <param name="planning/dev_order" value="4"    />
     <param name="planning/min_order" value="3"    />
     <param name="vis/vis_traj_width" value="0.05" />
@@ -16,10 +16,15 @@
     <!-- 控制超前参数 -->
     <param name="time_forward" value="0.8" type="double" />
 
+    <!-- 可见光相机内参 -->
+    <param name="fx_" value="606.7078247070312" type="double" />
+    <param name="fy_" value="606.3765869140625" type="double" /> 
+    <param name="cx_" value="321.51348876953125" type="double" />
+    <param name="cy_" value="258.6695556640625" type="double" />
 
     <!-- 第一关柱子坐标 -->
-    <param name="pillar1_x" value="2.0" type="double" />
-    <param name="pillar1_y" value="0.0" type="double" /> 
+    <param name="pillar1_x" value="5.0" type="double" />
+    <param name="pillar1_y" value="2.74" type="double" /> 
     <param name="pillar1_z" value="1" type="double" />
 
     <param name="pillar2_x" value="3.0" type="double" />
@@ -34,41 +39,58 @@
     <param name="pillar4_y" value="0.0" type="double" />
     <param name="pillar4_z" value="1" type="double" />
 
-
-
     <!-- 第二关隧道起点、终点坐标 -->
-    <param name="tunnel_start_x" value="6.0" type="double" />
-    <param name="tunnel_start_y" value="1.0" type="double" /> 
+    <param name="tunnel_start_x" value="15.09" type="double" />
+    <param name="tunnel_start_y" value="0.8" type="double" /> 
     <param name="tunnel_start_z" value="1.5" type="double" />
 
-    <param name="tunnel_end_x" value="6.0" type="double" />
-    <param name="tunnel_end_y" value="1.0" type="double" />
+    <param name="tunnel_end_x" value="22.50" type="double" />
+    <param name="tunnel_end_y" value="0.3" type="double" />
     <param name="tunnel_end_z" value="1.5" type="double" />
 
+    <!-- 第一关和第二关的飞行高度 -->
+    <param name="fly_altitude" value="1.4" type="double" />
 
     <!-- 第三关迷宫路标点 -->
-    <param name="maze_wp1_x" value="6.0" type="double" />
-    <param name="maze_wp1_y" value="1.0" type="double" /> 
-    <param name="maze_wp1_z" value="1.5" type="double" /> 
+    <param name="maze_wp1_x" value="15.25" type="double" />
+    <param name="maze_wp1_y" value="-7.50" type="double" /> 
+    <param name="maze_wp1_z" value="1.7" type="double" /> 
 
-    <param name="maze_wp2_x" value="6.0" type="double" />
-    <param name="maze_wp2_y" value="1.0" type="double" /> 
-    <param name="maze_wp2_z" value="1.5" type="double" />    
+    <param name="maze_wp2_x" value="13.50" type="double" />
+    <param name="maze_wp2_y" value="-7.71" type="double" /> 
+    <param name="maze_wp2_z" value="1.7" type="double" />    
+
+    <param name="maze_wp3_x" value="19.40" type="double" />
+    <param name="maze_wp3_y" value="-14.99" type="double" /> 
+    <param name="maze_wp3_z" value="1.7" type="double" /> 
+
+    <param name="maze_wp4_x" value="19.82" type="double" />
+    <param name="maze_wp4_y" value="-21.16" type="double" /> 
+    <param name="maze_wp4_z" value="1.7" type="double" />  
 
     <!-- 第四关圆终点大致位置 -->
-    <param name="circle_terminal_x" value="6.0" type="double" />
-    <param name="circle_terminal_y" value="1.0" type="double" /> 
+    <param name="circle_terminal_x" value="0.0" type="double" />
+    <param name="circle_terminal_y" value="-15.0" type="double" /> 
     <param name="circle_terminal_y" value="1.5" type="double" />  
 
 
     <!-- 圆环直径 -->   
-    <param name="circle_D" value="0.9" type="double" />  
+    <param name="circle_D" value="1.0" type="double" /> 
+
+    <!-- 穿圈定高高度 -->   
+    <param name="planning_circle_altitude" value="1.7" type="double" /> 
+
+    <!-- 搜二维码定高高度 -->       
+    <param name="searching_apriltag_altitude" value="1.7" type="double" /> 
+
+    <!-- 规划圆终点半径阈值 -->   
+    <param name="planning_circle_radius" value="150" type="int" />    
 
 
 
     <!-- 终点大致位置 -->
-    <param name="terminal_apriltag_x" value="6.0" type="double" />
-    <param name="terminal_apriltag_y" value="1.0" type="double" /> 
+    <param name="terminal_apriltag_x" value="-2.0" type="double" />
+    <param name="terminal_apriltag_y" value="-14.5" type="double" /> 
     <param name="terminal_apriltag_z" value="1.0" type="double" />
 
 

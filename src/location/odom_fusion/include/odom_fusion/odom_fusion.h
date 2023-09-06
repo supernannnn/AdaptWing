@@ -16,6 +16,9 @@
 #include <Eigen/Geometry>
 
 
+//自定义的控制台状态消息
+#include <console/ConsoleState.h>
+
 #include <std_msgs/Float64.h>
 
 using std::cout;
@@ -25,10 +28,10 @@ class ODOM_FUSION{
 private:
 
     double altitude;
-    ros::Subscriber odom_sub, px4_imu_sub;
+    ros::Subscriber odom_sub, px4_imu_sub, console_state_sub;
     ros::Publisher odom_fusion_pub;
 
-
+    int state;
     nav_msgs::Odometry odom_data;
     bool flag;
     bool have_altitude;
@@ -38,6 +41,7 @@ private:
     void readLaser();
     void OdomCallback(const nav_msgs::OdometryConstPtr msg);
     void PX4IMUCallback(const sensor_msgs::ImuConstPtr msg);
+    void StateCallback(console::ConsoleStateConstPtr msg);
 public:
     ODOM_FUSION(){
         have_altitude = false;
